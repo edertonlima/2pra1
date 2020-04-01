@@ -1,0 +1,31 @@
+.ico-redes {
+	padding: 20px 0;
+	text-align: center;
+
+	li {
+		padding: 0 50px;
+		display: inline-block;
+
+		i {
+			font-size: 2.35rem;
+		}
+
+		a {
+			&:hover {
+				i {
+					color: $cor1;
+				}
+			}
+		}
+	}
+}
+
+.contacto {
+	.slide {
+		h2 {
+			text-transform: none;
+			font-weight: $bold;
+			line-height: 2.25rem;
+		}
+	}
+}

@@ -1,0 +1,299 @@
+.prensa {
+	h3 {
+		margin-bottom: 25px;
+		padding-left: 50px;
+	}
+
+	.all-post {
+		margin-right: 50px;
+	}
+
+	&.prensa-list {
+		.col-6:nth-child(2n+2) {
+			clear: both;
+		}
+
+		.capa {
+			display: block;
+			width: 100%;
+			//height: 250px;
+			//overflow: hidden;
+			position: relative;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			.mask {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				@include box-sizing;
+			}
+
+			i {
+				color: #ffffff;
+				position: absolute;
+				top: 50%;
+				font-size: 3rem;
+				margin-top: -22px;
+			    left: 50%;
+			    margin-left: -22px;
+				opacity: 0;
+				@include box-sizing;
+			}
+		}
+
+		.box-bg-content {
+			display: block;
+			padding: 15px 15px 35px;
+			position: relative;
+		}
+
+		.titulo-prensa {
+			display: block;
+			font-size: 1.25rem;
+			line-height: 1.5rem;
+			margin-top: 15px;
+			font-weight: $regular;
+			margin-bottom: 15px;
+			/*height: 50px;
+			overflow: hidden;*/
+		}
+
+		.data-prensa {
+			display: block;
+			padding: 0px;
+			line-height: 20px;
+			font-size: 1rem;
+		}
+
+		.conteudo-texto {
+			margin-bottom: 15px;
+
+			p {
+				font-size: .85rem;
+				line-height: 1.325rem;
+			}
+		}
+
+		.categoria-prensa, {
+			display: block;
+			text-transform: uppercase;
+			font-size: .75rem;
+			position: absolute;
+			bottom: 15px;
+
+			i {
+				font-size: .4rem;
+				position: relative;
+				top: -2.5px;
+				padding-right: 5px;
+			}
+
+			a {
+				text-transform: uppercase;
+				font-size: .75rem;
+			}
+		}
+
+		.item-prensa {
+			&:hover {
+				.capa{
+					.mask {
+						opacity: .2;
+					}
+					i {
+						opacity: 1;
+					}
+				}
+			}
+
+			&.video {
+				.capa {
+					position: relative;
+					text-align: center;
+
+					&:after {
+						content: url('../images/ico-play.png');
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						margin: -30.5px 0 0 -31px;
+					}
+				}
+			}
+
+			&.galeria {
+				.capa {
+					.slide {
+						height: auto;
+
+						.carousel, .carousel-inner, .carousel-item {
+							height: auto;							
+						}
+					}
+				}
+
+				.owl-carousel {
+					.owl-dots {
+						bottom: 55px;
+						top: auto;
+						z-index: 999;
+						width: 100%;
+						height: 0;
+
+						.owl-dot {
+							margin: 0 9px;
+							width: 22px;
+							height: 22px;
+							box-shadow: none;
+							background-color: transparent;
+							border: 2px solid #ffffff;
+
+							span {
+								display: none;
+							}
+
+							&.active {
+								background-color: #fff!important;
+							}
+						}
+					}
+
+					.owl-nav {
+						top: 50%;
+						height: 0;
+						width: 100%;
+
+						button {
+							width: 35px;
+							height: 35px;
+							border-radius: 50%;
+							background: #ffffff!important;
+							position: absolute;
+							top: -17.5px;
+							@include box-sizing;
+
+							i {
+								color: $cor-txt;
+								top: 1px;
+								position: relative;
+							}
+
+							&:hover {
+								opacity: 0.7;
+							}
+
+							&.owl-prev {
+								left: 20px;
+							}
+
+							&.owl-next {
+								right: 20px;
+							}
+
+							&.disabled {
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+	.item-list-prensa {
+		margin-top: 20px;
+		
+		&.video {
+			.capa {
+				position: relative;
+				text-align: center;
+
+				&:before {
+					content: url('../images/ico-play.png');
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin: -30.5px 0 0 -31px;
+				}
+			}
+		}
+		.content-list-prensa {
+			padding: 20px;
+		}
+
+		.titulo-prensa {
+			font-size: 1.5rem;
+			line-height: 1.75rem;
+
+			height: auto;
+		}
+	}
+
+	&.det-prensa {
+		h2 {
+			max-width: 800px;
+			margin: auto;
+		}
+	}
+}
+
+
+.owl-carousel {
+	button {
+		height: auto;
+		line-height: normal!important;
+		background-color: transparent!important;
+	}
+
+	.owl-nav {
+		position: absolute;
+		top: -38px;
+		left: 50%;
+		margin: 0;
+		transform: translate(-50%, -50%);
+
+		button {
+			i {
+				font-size: 1.125rem;
+				color: $cor1;
+			}
+		}
+	}
+
+	.owl-dots {
+		position: absolute;
+		top: -37px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		.owl-dot {
+			span{
+				width: 12px;
+				height: 12px;
+				margin: 0 5px;
+				border: 1px solid rgba($cor-txt, .25);
+				background-color: transparent;
+			}
+
+			&.active, &:hover {
+				span {
+					background-color: rgba($cor-txt, .25);
+				}
+			}
+		}
+	}
+}

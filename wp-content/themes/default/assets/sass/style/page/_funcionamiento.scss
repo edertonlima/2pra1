@@ -1,0 +1,85 @@
+.funcionamiento {
+	margin-bottom: 100px;
+	
+	.owl-item {
+		.conteudo-texto {
+			&.cont-left {
+				padding-right: 20px;
+				h3 {
+					font-weight: $bold;
+					margin-bottom: 30px;
+				}
+			}
+
+			&.cont-right {
+				padding-left: 20px;
+			}
+		}
+	}
+
+	&.owl-carousel {
+		.owl-nav {
+			top: 370px;
+			background-color: #ffffff;
+
+			button {				
+				i {
+					font-size: 1.5rem;
+					color: $cor-txt;
+				}
+
+				&:hover {
+					i {
+						color: $cor1;
+					}
+				}
+
+				&.disabled {
+					opacity: 0; 
+				}
+			}
+		}
+	}
+
+	&.funcionamiento-navegacao {
+		&.owl-carousel {
+			.owl-nav {
+				right: -75px;
+				left: auto;
+			}
+		}
+	}
+}
+
+.term-transporte-crudo-pesado {
+	overflow-x: hidden;
+
+	.funcionamiento {
+		margin-top: 40px;
+	}
+}
+
+.time-line {
+	padding-bottom: 150px;
+
+	.cd-h-timeline__events {
+		overflow: visible;
+
+		.cd-h-timeline__event {
+			padding: 0 20px;
+		}
+
+		.link-nav {
+			position: relative;
+			top: -200px;
+
+			.next-timeline {
+				right: 75px;
+			}
+
+			.prev-timeline {
+				left: 75px;
+			}
+		}
+	}
+}

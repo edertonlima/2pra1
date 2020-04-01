@@ -1,0 +1,476 @@
+strong, .bold {
+	font-weight: $bold;
+}
+
+.medium {
+	font-weight: $medium;
+}
+
+.logo {
+	float: left;
+	width: 150px;
+	height: 54px;
+	
+	a {
+		display: block;
+		position: relative;
+
+		span {
+			position: absolute;
+			display: block;
+			@include animacao-slow;
+
+			img {
+				width: 100%;
+				display: block;
+			}
+
+			&.branco {
+				opacity: 0;
+			}
+
+			&.vermelho {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.home, .single-servicos, .single-post, .page {
+	.logo {
+		a {
+			span {
+				&.branco {
+					opacity: 1;
+				}
+
+				&.vermelho {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.header {
+	&.scroll {
+		.logo {
+			a {
+				span {
+					&.branco {
+						opacity: 0;
+					}
+					&.vermelho {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-titulo;
+	font-weight: $light;
+	display: block;
+}
+
+h1 {
+	font-size: 4.6875rem;
+	line-height: 4.25rem;
+	margin-bottom: 80px;
+}
+
+h2 {
+	font-size: 2.9375rem;
+	line-height: 3.5rem;
+
+	&.titulo {
+		margin-bottom: 80px;
+	}
+
+	&.titulo-form {
+		margin-bottom: 40px;
+	}
+
+	&.ico-titulo {
+		color: $cor-txt-claro;
+		font-size: 1.5rem;
+		background: url("../images/ico-processos.png") no-repeat left top;
+		padding-left: 55px;
+		line-height: 50px;
+		margin-bottom: 20px;
+		font-weight: $regular;
+	}
+}
+
+h3 {
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+	font-size: $font-size;
+	line-height: $line-height;
+	padding-bottom: 30px;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.justify-center {
+	text-align: justify;  
+	-moz-text-align-last: center;
+	text-align-last: center;
+}
+
+.justify {
+	text-align: justify;  
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.position-right {
+	float: right;
+}
+
+.no-margim, .no-margin {
+	margin: 0!important;
+}
+
+.no-margin-top {
+	margin-top: 0px!important;
+}
+
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+
+.margin-top-15 {
+	margin-top: 15px;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
+}
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.margin-top-30 {
+	margin-top: 30px;
+}
+
+.margin-top-40 {
+	margin-top: 40px;
+}
+
+
+.margin-bottom-40 {
+	margin-bottom: 40px;
+}
+
+.margin-top-60 {
+	margin-top: 60px;
+}
+
+.margin-bottom-60 {
+	margin-bottom: 60px;
+}
+
+.margin-top-2x {
+	margin-top: 80px;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0;
+}
+
+.no-padding-right {
+	padding-right: 0px!important;
+}
+
+.no-padding-top {
+	padding-top: 0;
+}
+
+.padding-top-20 {
+	padding-top: 20px;
+}
+
+.padding-top-40 {
+	padding-top: 40px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.no-uppercase {
+	text-transform: none;
+
+	span {
+		text-transform: none;
+	}
+}
+
+
+
+a, button {
+	cursor: pointer;
+	text-decoration: none;
+	@include animacao;
+
+	i {
+		@include animacao;
+	}
+
+	&:hover {
+		text-decoration: none;		
+	}
+
+	&.link {
+		display: inline-block;
+	}
+
+	&.btn {
+		font-weight: $light;
+		border: 1px solid #ffffff;
+		background-color: #ffffff;
+		color: $cor-txt;
+		display: inline-block;
+		border-radius: 15px;
+		padding: 0 20px;
+		height: 30px;
+		line-height: 28px;
+
+		&.extra {
+			font-size: 2.25rem;
+			height: 60px;
+			line-height: 59px;
+			padding: 0 25px;
+			border-width: 2px;
+		}
+
+		&.mini {
+			//font-size: 2.25rem;
+			height: 35px;
+			line-height: 32px;
+			padding: 0 30px;
+			border-width: 2px;
+		}
+
+		&.extra-grande {
+			font-size: 1.8rem;
+			height: 90px;
+			line-height: 90px;
+			padding: 0 17px;
+			border-width: 2px;
+		}
+
+		&.largo {
+			font-size: 2.25rem;
+			height: 60px;
+			line-height: 59px;
+			padding: 0 50px;
+			border-width: 2px;
+		}
+
+		&.semi-bold {
+			border-width: 4px;
+		}
+
+		&.bold {
+			border-width: 4px;
+			font-weight: $semi-bold;
+		}
+
+		&.btn-mais {
+			margin-top: 80px;
+		}
+
+		&.transparente {
+			background-color: transparent;
+			color: #ffffff;
+
+			&:hover {
+				background-color: #ffffff;
+				color: $cor-txt;
+			}
+
+			&.default {
+				background-color: transparent;
+				color: $cor-txt-claro;
+				border-color: $cor-txt-claro;
+
+				&:hover {
+					background-color: $vermelho;
+					border-color: $vermelho;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+	&.underline {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.label {
+	color: #ffffff;
+	display: inline-block;
+	font-size: .6rem;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	font-weight: $regular;
+	letter-spacing: 1px;
+
+	&.grande {
+		//height: 46px;
+		//line-height: 46px;
+		//color: #ffffff;
+		//font-weight: $bold;
+		font-size: .75rem;
+		padding: 10px 20px;
+	}
+
+	&.nome-area {
+		position: relative;
+		right: 0;
+		top: 0;
+		height: 46px;
+		line-height: 46px;
+		color: #ffffff;
+		font-weight: $bold;
+		font-size: 1.06rem;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 0 25px;
+		border-radius: 5px;
+	}
+}
+
+
+.paginacao {
+	margin: 50px auto 0;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0px;
+
+		span, a {
+			display: block;
+			font-size: 1.225rem;
+			font-weight: $medium;
+			line-height: 40px;
+			height: 40px;
+			padding: 0 10px;
+		}
+
+		a {
+			color: $verde;
+			@include animacao;
+
+			.fa {
+				font-size: 1.225rem;
+				font-weight: $medium;
+				color: $verde;
+			}
+
+			&:hover {
+				background-color: rgba($verde, .5);
+			}
+		}
+
+		span {
+			background-color: $verde;
+			color: #ffffff;
+		}
+	}
+}
+
+.tags{
+	display: block;
+	width: 100%;
+
+	li {
+		display: inline-block;
+
+		.label {
+			margin: 0;
+			color: $cor-txt;
+			border: 1px solid $cor-txt;
+			opacity: .6;
+
+			&:hover {
+				color: $laranja;
+			}
+		}
+	}
+}
+
+
+.redes-sociais {
+	i {
+		font-size: 1.31rem;
+		top: 2px;
+		padding-right: 10px;
+	}
+
+	a {
+		&:last-child {
+			i {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+// ICONES
+.fa-user-lock {
+	font-size: 0.8rem;
+	top: -1px;
+	padding-right: 7px;
+}
+
+.fa-search {
+	font-size: 1.4rem;
+	top: 2px;
+}

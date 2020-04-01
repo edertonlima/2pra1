@@ -1,0 +1,204 @@
+$height_input: 30px;
+
+form {
+	margin: 0 auto;
+	padding: 0 100px;
+	max-width: 840px;
+	width: 100%;
+	@include box-sizing;
+	@include clear();
+
+	input, textarea {
+		font-style: italic;
+		max-width: 100%;
+		width: 100%;
+		font-size: .85rem; 
+		color: $cor-txt;
+		font-weight: $light;
+		line-height: $height_input;
+		background-color: transparent;
+		padding: 0px;
+		font-style: normal;
+		border-bottom: 1px solid $cor-txt;
+		@include animacao;
+		@include box-sizing;
+
+		@include placeholder{
+			opacity: 1;
+			color: $cor-txt;
+			font-style: italic;
+		}
+	}
+
+	input[type='text'], input[type='email'], input[type='password'] {
+		height: $height_input;
+		line-height: $height_input;	
+	}
+
+	textarea {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 110px;
+		resize: vertical;
+	}
+
+	label {
+		padding-left: 17px;
+		font-size: 1rem;
+		line-height: 1.25rem;
+		margin-bottom: 3px;
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	fieldset {
+		margin-bottom: 40px;
+		width: 100%;
+		float: left;
+		//clear: both;
+
+		&.margin-top {
+			margin-top: 40px;
+		}
+
+		&:last-chid {
+			margin-bottom: 0;
+		}
+
+		&.erro {
+			input, textarea {
+				border-color: $vermelho;
+			}
+
+			label {
+				color: $vermelho;
+			}
+		}
+
+		&.clear {
+			@include clear;
+		}
+	}
+
+	&.contato {
+		padding: 0 110px;
+		margin: 30px 0 0;
+	}
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+/*
+button, input[type='submit'], .button { 
+	display: inline-block;
+	width: auto;
+	height: $height_input;
+	line-height: $height_input;
+	color: $cor-txt;
+	font-weight: $bold;
+	font-size: 1.125rem; 
+	text-align: center;
+	padding: 0 15px;
+	border-radius: 16px;
+	border: 1px solid $cor1;
+	cursor: pointer;
+	background-color: transparent;
+	@include animacao;
+	@include box-sizing();
+
+	i {
+		@include animacao;
+	}
+
+	&:hover {
+		background-color: $cor-txt;
+		color: #ffffff;
+	}
+
+	&.grande {
+		line-height: 53px;
+		height: 53px;
+		font-size: 1.25rem;
+		padding: 0 25px;
+	}
+
+	&.pequeno {
+		height: 39px;
+		line-height: 39px;
+		font-size: .75rem;
+		text-transform: none;
+	}
+
+	&.btn-full {
+		width: 100%;
+	}
+}*/
+
+.select {
+	overflow: hidden;
+	padding: 0 0 0 10px;
+	margin-bottom: 20px;
+	display: block;
+	position: relative;
+	background-color: #ffffff;
+	line-height: 43px;
+	height: 43px;
+	border-bottom: 1px solid $cor-txt;
+	font-style: normal;
+
+	@include box-sizing();
+
+	select {
+		width: 88%;
+		padding-right: 135px;
+		background-color: transparent;
+		font-weight: $light;
+		font-size: 1rem; 
+		color: $cor-txt;
+		box-sizing: content-box;
+		position: relative;
+		z-index: 99;
+		cursor: pointer;
+	}
+
+	&:after {
+		content: "\f078";
+		font-weight: 900;
+		position: absolute;
+		right: 13px;
+		top: 15px;
+		font-family: 'Font Awesome 5 Free';
+		cursor: pointer;
+		height: 15px;
+		line-height: 15px;
+		z-index: 0;
+	}
+}
+
+
+.msg-form {
+	display: block;
+	font-size: 1rem;
+	margin-bottom: 20px;
+	font-weight: $regular;
+	color: $cor1;
+
+	strong {
+		display: block;
+		font-size: 1rem;
+	}
+
+	&.off {
+		display: none;
+	}
+
+	&.erro {
+		//color: $vermelho;
+	}
+
+	&.ok {
+		//color: $verde;
+	}
+}

@@ -1,0 +1,115 @@
+.nav-linha-tempo {
+	position: fixed;
+	top: 200px;
+	left: 0px;
+	z-index: 9999;
+	width: 180px;
+	padding: 30px 25px;
+	background-color: #ffffff;
+	@include animacao-slow;
+
+	&.linha-tempo-bottom {
+		position: absolute;
+		margin: 0;
+	}
+
+	h4 {
+		font-weight: $light;
+	}
+
+	ul {
+		margin-top: 5px;
+	}
+
+	li {
+		position: relative;
+		padding: 5px 0 10px 18px;
+		line-height: 0.4rem;
+		cursor: pointer;
+
+		&:before {
+			top: 14px;
+			left: 7px;
+			content: '';
+			height: 100%;
+			width: 1px;
+			background-color: $cor-txt; 
+			position: absolute;
+		}
+
+		&:last-child {
+			&:before {
+				display: none;
+			}
+		}
+
+		i {
+			position: absolute;
+			left: 0px;
+			top: 4px;
+			color: $cor1;
+			background-color: #ffffff;
+
+			&.fas {
+				display: none;
+			}
+		}
+
+		span {
+			font-weight: $light;
+			font-size: .75rem;
+			line-height: .75rem;
+			//line-height: .75rem;
+			//line-height: $font-size+.25;
+			color: $cor-txt;
+
+			&.titulo {
+				display: none;
+			}
+		}
+
+		&.active {
+			span {
+				font-weight: $regular;
+
+				&.titulo {
+					display: inline;
+				}
+			}
+
+			i {
+				color: $cor1;
+
+				&.fas {
+					display: inline-block;
+				}
+
+				&.far {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+.slide {
+	.text-item {
+		&.item-nuestra-historia {
+			padding: 0 30px;
+
+			.titulo-slide {
+				h2 {
+					color: $cor1;
+					font-weight: $bold;
+					line-height: 1.5rem;
+					text-transform: none;
+				}
+
+				p {
+					font-size: .85rem;
+				}
+			}
+		}
+	}
+}

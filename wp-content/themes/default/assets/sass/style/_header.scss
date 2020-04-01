@@ -1,0 +1,58 @@
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	padding: 20px 0;
+	background-color: #ffffff;
+	@include animacao-slow;
+}
+
+.home, .single-servicos, .single-post, .page {
+	.header {
+		padding: 40px 0;
+		background-color: transparent;
+
+		&.scroll {
+			background-color: #ffffff;
+			padding: 20px 0;
+		}
+	}
+}
+
+.breadcrumbs {
+
+	&:not(.margin-top) {
+		padding-top: 30px;
+	}
+
+	.container {
+		border-bottom: 1px solid $cor-txt;
+	}
+
+	ul {
+		float: right;
+
+		li, li a {
+			font-weight: $regular;
+			font-size: .75rem;
+		}
+
+		li {
+			text-transform: uppercase;
+			display: inline-block;		
+
+			&:last-child {
+				padding-right: 0px;
+			}
+
+			span {
+				position: relative;
+				top: -1px;
+				font-weight: $regular;
+				font-size: .8rem;
+			}
+		}
+	}
+}
