@@ -39,24 +39,26 @@
 				<div class="row no-padding list-post">
 					<div class="col-12">
 
-						<div class="article article-full">
+						<div class="article article-full <?php if(!get_field('texto-destaque-imagem')){ echo 'no-hover color'; } ?>">
 
 							<?php 
-							$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' );
+							$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'wide' );
 							if($imagem[0]){ ?>
 								<img src="<?php echo $imagem[0]; ?>" alt="<?php the_field('texto-destaque-imagem'); ?>">
 							<?php } ?>
 
-							<div class="conteudo-list">
-									
-								<div class="box-vertical vertical-center">
-									<div class="conteúdo-vertical">
-										<h2><?php the_field('texto-destaque-imagem'); ?></h2>
+							<?php if(get_field('texto-destaque-imagem')){ ?>	
+								<div class="conteudo-list">
+								
+									<div class="box-vertical vertical-center">
+										<div class="conteúdo-vertical">
+											<h2><?php the_field('texto-destaque-imagem'); ?></h2>
+										</div>
 									</div>
+									<span class="bottom"><?php the_field('legenda-destaque-imagem'); ?></span>
+								
 								</div>
-								<span class="bottom"><?php the_field('legenda-destaque-imagem'); ?></span>
-
-							</div>
+							<?php } ?>
 						</div>
 
 					</div>
@@ -83,14 +85,14 @@
 										<?php break;
 
 										case 'texto': ?>
-											<div class="conteudo">
+											<div class="conteudo margin-top">
 												<p><?php the_sub_field('texto'); ?></p> 
 											</div>
 										<?php break;
 
 										case 'imagem': ?>
 											<?php $image = get_sub_field('imagem'); ?>
-											<img class="margin-top" src="<?php echo esc_url($image['sizes']['wide-medium']); ?>" alt="<?php the_title(); ?>">	
+											<img class="margin-top" src="<?php echo esc_url($image['sizes']['wide']); ?>" alt="<?php the_title(); ?>">	
 										<?php break;
 
 									}
@@ -103,15 +105,18 @@
 									<h2 class="ico-titulo">Processos</h2>
 									<p><?php the_field('processos'); ?></p> 
 								</div>
-							<?php } ?>
+							<?php }
 
-							<?php $images = get_field('galeria'); ?>
-							<?php if(count($images) > 0){
-								foreach( $images as $image ): ?>
+							if(get_field('galeria')){
+								$images = get_field('galeria');
+								
+								if(count($images) > 0){
+									foreach( $images as $image ): ?>
 
-									<img class="margin-top" src="<?php echo esc_url($image['sizes']['wide-medium']); ?>" alt="<?php the_title(); ?>">
+										<img class="margin-top" src="<?php echo esc_url($image['sizes']['wide-medium']); ?>" alt="<?php the_title(); ?>">
 
-								<?php endforeach;
+									<?php endforeach;
+								}
 							} ?>
 
 						</article>						
@@ -123,15 +128,14 @@
 		</section>
 
 
-
-
 		<?php
-		$category = wp_get_post_terms( $post->ID, 'categoria_projetos' )[0];
+		$category = wp_get_post_terms( $post->ID, 'categoria_projetos' )[0]; //var_dump($category);
 		$query = array(
-				'posts_per_page'	=> 2,
+				'posts_per_page'	=> 3,
 				'post_type' 	 	=> 'projetos',
 				'taxonomy'			=> $category->taxonomy,
 				'post__not_in'		=> array( $post->ID ),
+				'terms'				=> $category->term_id,
 				'orderby' => 'rand',
 				'order'    => 'ASC'
 			);
@@ -144,7 +148,7 @@
 							
 					<h2>
 						Outros projetos
-						<a href="https://ederton.com.br/preview/2pra1/projetos" class="btn mini no-padding transparente cinza-claro position-right">ver todos</a>
+						<a href="https://ederton.com.br/preview/2pra1/projetos" class="btn mini no-padding transparente cinza-claro position-right btn-ver-todos">ver todos</a>
 					</h2>
 					<div class="row no-padding list-post projetos outros-projetos">
 
@@ -166,3 +170,13 @@
 	<?php endwhile; ?>
 
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	proj_height = $('.projetos .col-4:first-child').width();
+	$('.projetos .article').height(proj_height);
+
+	$(window).resize(function(){
+		proj_height = $('.projetos .col-4:first-child').width();
+		$('.projetos .article').height(proj_height);
+	});
+</script>

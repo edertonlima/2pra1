@@ -21,8 +21,11 @@
 	}
 
 	.article {
-		height: 60vh;
-		min-height: 500px;
+		&.list-servico, &.e-book {
+			height: 60vh;
+			min-height: 500px;
+		}
+
 		position: relative;
 		overflow: hidden;
 		@include animacao-slow;
@@ -54,6 +57,7 @@
 			}
 
 			h2 {
+				font-weight: $bold;
 				@include animacao;
 			}
 
@@ -84,12 +88,8 @@
 			}
 
 			h2 {
-				font-weight: $semi-bold;
+				//font-weight: $bold;
 				color: #ffffff;
-
-				&.teste {
-					font-weight: $regular;
-				}
 			}
 
 			h3, a {
@@ -129,6 +129,10 @@
 
 				span {
 					font-size: 1.5rem;
+
+					&.bottom {
+						//font-weight: $semi-bold;
+					}
 				}
 
 				h2, span {
@@ -163,7 +167,7 @@
 			}
 		}
 
-		&.no-hover {
+		&.no-hover:not(.color) {
 			@include grayscale(100);
 
 			h3, a {
@@ -210,14 +214,22 @@
 
 					&.top {
 						top: 50px;
-						font-size: 1.6875rem;
-						line-height: 1.6875rem;
+						//font-size: 1.6875rem;
+						//line-height: 1.6875rem;
+
+						font-size: 1.25rem;
+						line-height: 1.25rem;
+						font-weight: $semi-bold;
 					}
 
 					&.bottom {
 						bottom: 50px;
-						font-size: 2.5rem;
-						line-height: 2.5rem;
+						//font-size: 2.5rem;
+						//line-height: 2.5rem;
+
+						font-size: 1.75rem;
+						line-height: 2rem;
+						font-weight: $semi-bold;
 					}
 				}
 			}
@@ -255,7 +267,17 @@
 				}
 			}
 		}
+
+		&.cat-especifica {
+			.top {
+				display: none;
+			}
+		}
 	}
+}
+
+.btn-ver-todos {
+	margin-top: 9px;
 }
 
 .outro-conteudo {

@@ -1,8 +1,18 @@
 <?php get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
+	
+	<?php if(!get_field('video-slide')){
+		$banner_image = get_field('imagem-slide');
+	} ?>
+	
+	<section class="box-section <?php if(get_field('video-slide')){ echo 'video-slide '; } ?>no-padding full-height bg-imagem bg-mascara" <?php if(!get_field('video-slide')){ ?> style="background-image: url('<?php echo $banner_image['sizes']['wide']; ?>');" <?php } ?>>
+		
+		<?php if(get_field('video-slide')){ ?>
+			<video autoplay="true" loop="true" muted="true">
+				<source src="<?php the_field('video-slide'); ?>" type="video/mp4">
+			</video>
+		<?php } ?>
 
-	<?php $banner_image = get_field('imagem-slide'); ?>
-	<section class="box-section no-padding full-height bg-imagem bg-mascara" style="background-image: url('<?php echo $banner_image['sizes']['wide']; ?>');">
 		<div class="container">
 			
 			<div class="box-vertical vertical-center">
@@ -74,7 +84,7 @@
 
 	<?php
 	$query = array(
-			'posts_per_page' => 6,
+			'posts_per_page' => 9,
 			'post_type' 	 => 'projetos',
 			//'category_name'  => 'prensa'
 		);
@@ -120,7 +130,7 @@
 							<?php the_field('titulo-banner-inferior'); ?>
 						</span>
 
-						<a href="<?php the_field('link-banner-inferior'); ?>" class="btn extra bold transparente" title="<?php the_field('titulo-link-banner-inferior'); ?>"><?php the_field('titulo-link-banner-inferior'); ?></a>
+						<a href="<?php the_field('link-banner-inferior'); ?>" class="btn extra transparente" title="<?php the_field('titulo-link-banner-inferior'); ?>"><?php the_field('titulo-link-banner-inferior'); ?></a>
 					</div>
 				</div>
 			</div>
@@ -132,5 +142,30 @@
 <?php get_footer(); ?>
 
 <script type="text/javascript">
+	<?php if(get_field('video-slide')){ ?>
 
+		//$(document).ready(function(){
+			video_width = ($('.video-slide').width())/2.333333;
+			$('.video-slide .container').height(video_width);
+			$('.video-slide video').height(video_width);
+		//});
+
+		$(window).resize(function(){
+			video_width = ($('.video-slide').width())/2.333333;
+			$('.video-slide .container').height(video_width);
+			$('.video-slide video').height(video_width);
+		});
+
+	<?php } ?>
+
+
+
+
+	proj_height = $('.projetos .col-4:first-child').width();
+	$('.projetos .article').height(proj_height);
+
+	$(window).resize(function(){
+		proj_height = $('.projetos .col-4:first-child').width();
+		$('.projetos .article').height(proj_height);
+	});
 </script>

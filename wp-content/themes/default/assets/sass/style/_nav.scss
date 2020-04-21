@@ -1,6 +1,6 @@
 .nav {
 	float: right;
-	margin-top: 23px;
+	margin-top: 18px;
 	padding-left: 60px;
 	@include animacao-slow;
 
@@ -17,11 +17,12 @@
 	}
 
 	a {
-		font-size: 1.125rem;
+		font-size: .8rem;
 		line-height: 1.125rem;
 		color: $cor-txt;
 		font-weight: $light;
 		padding: 0px 5px;
+		text-transform: uppercase;
 		@include animacao-slow;
 
 		i {

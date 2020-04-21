@@ -35,14 +35,14 @@
 			</div>
 		</section>
 
-		<section class="box-section">
+		<section class="box-section no-padding">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-12">
 
 <?php if( have_rows('conteudo_flexivel') ):
-	//$ele_video = 0;
+	$ele_video = 0;
 	while( have_rows('conteudo_flexivel') ): the_row();
 
 		switch (get_row_layout()) {
@@ -102,7 +102,7 @@
 					$thumbnail = "https://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";*/
 				?>						
 
-				<div class="article bg-imagem no-hover video" style="background-image: url('<?php echo esc_url($capa_video['sizes']['wide']); ?>');">
+				<div class="article list-servico bg-imagem no-hover video" style="background-image: url('<?php echo esc_url($capa_video['sizes']['wide']); ?>');">
 					<div class="conteudo-list">
 						
 						<a data-fancybox href="<?php if($video_html){ echo '#video_html-'.$ele_video; }else{ echo $video_url; } ?>"><i class="far fa-play-circle"></i></a>
@@ -117,9 +117,7 @@
 				</div>
 
 			</div>
-		</section>
 
-		<section class="box-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -132,22 +130,14 @@
 
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<section class="box-section">
-			<div class="container">
 				<div class="row list-post">
 					<div class="col-12">
-						<article class="article bg-imagem" style="background-image: url('<?php echo esc_url($image['sizes']['wide-medium']); ?>');">
+						<article class="article list-servico bg-imagem margin-top-2x" style="background-image: url('<?php echo esc_url($image['sizes']['wide-medium']); ?>');">
 						</article>
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<section class="box-section">
-			<div class="container">
 				<div class="row">
 					<div class="col-12">
 
@@ -180,7 +170,7 @@ endif; ?>
 								Receba um relatório<br>completo para reduzir<br>seus custos
 							</span>
 
-							<a data-fancybox href="#demonstracao" class="btn extra-grande bold transparente" title="agende uma demonstração">agende uma demonstração</a>
+							<a data-fancybox href="#demonstracao" class="btn extra-grande transparente" title="agende uma demonstração">agende uma demonstração</a>
 						</div>
 					</div>
 				</div>

@@ -4,11 +4,19 @@ a, .btn {
 
 		&.transparente {
 			color: $cinza-claro;
-			border-color: $cinza-claro;			
+			border-color: $cinza-claro;
+
+			i {
+				color: $cinza-claro;
+			}
 
 			&:hover {
 				color: #ffffff;
 				background-color: $cinza-claro;
+
+				i {
+					color: #Ffffff;
+				}
 			}
 		}
 	}

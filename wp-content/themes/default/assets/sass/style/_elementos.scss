@@ -8,8 +8,8 @@ strong, .bold {
 
 .logo {
 	float: left;
-	width: 150px;
-	height: 54px;
+	width: 200px;
+	height: 47px;
 	
 	a {
 		display: block;
@@ -283,14 +283,22 @@ a, button {
 			line-height: 59px;
 			padding: 0 25px;
 			border-width: 2px;
+
+			&.load-more {
+				line-height: 56px;
+
+				i {
+					font-size: 1.75rem;
+				}
+			}
 		}
 
 		&.mini {
 			//font-size: 2.25rem;
 			height: 35px;
-			line-height: 32px;
+			line-height: 33px;
 			padding: 0 30px;
-			border-width: 2px;
+			//border-width: 2px;
 		}
 
 		&.extra-grande {
@@ -298,7 +306,7 @@ a, button {
 			height: 90px;
 			line-height: 90px;
 			padding: 0 17px;
-			border-width: 2px;
+			//border-width: 2px;
 		}
 
 		&.largo {
@@ -320,6 +328,10 @@ a, button {
 
 		&.btn-mais {
 			margin-top: 80px;
+
+			i {
+
+			}
 		}
 
 		&.transparente {

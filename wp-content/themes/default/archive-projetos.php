@@ -16,6 +16,8 @@
 		<div class="container">
 
 			<h1>A melhor experiência<br>e retorno para o seu projeto</h1>
+			
+			<?php /*
 			<div class="row no-padding list-post projetos">
 
 				<div class="col-12">
@@ -42,23 +44,40 @@
 
 					</ul>
 				</div>
+			</div>
+			*/ ?>
+
+			<div class="row no-padding list-post projetos">
 
 				<?php 		
 				$row = 0;		
 				while ( have_posts() ) : the_post(); 
 
 					//for ($i=0; $i < 3; $i++) { 
-						$row++;
+						$row++; 
 						get_template_part( 'content', 'list-projeto' );
 					//}
 
 				endwhile; ?>
 
-				<div class="col-12 center">
-					<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a>
+			</div>
+			
+			<?php if($wp_query->max_num_pages > 1){ ?>
+				<div class="row no-padding list-post projetos row-load-more">
+
 				</div>
 
-			</div>
+				<div class="row no-padding list-post projetos">
+
+					<div class="col-12 center">
+						<button class="load-more btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="categoria_projetos" var-category="" var-post-type="projetos" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" id="load-more">
+							mais
+						</button>
+						<?php //<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a> ?>
+					</div>
+
+				</div>
+			<?php } ?>
 
 		</div>
 	</section>
@@ -66,5 +85,11 @@
 <?php get_footer(); ?>
 
 <script type="text/javascript">
+	proj_height = $('.projetos .col-4:first-child').width();
+	$('.projetos .article').height(proj_height);
 
+	$(window).resize(function(){
+		proj_height = $('.projetos .col-4:first-child').width();
+		$('.projetos .article').height(proj_height);
+	});
 </script>

@@ -1,11 +1,11 @@
 <nav class="nav">
 	<ul>
 		<li>
-			<a href="<?php echo get_home_url(); ?>/projetos" title="Projetos">Projetos</a>
+			<a href="<?php echo get_post_type_archive_link('projetos'); ?>" title="Projetos">Projetos</a>
 		</li>
 
 		<li>
-			<a href="<?php echo get_home_url(); ?>/servicos" title="Serviços">Serviços</a>
+			<a href="<?php echo get_post_type_archive_link('servicos'); ?>" title="Serviços">Serviços</a>
 		</li>
 
 		<li>
@@ -17,7 +17,7 @@
 		</li>
 
 		<li>
-			<a href="">Reconhecimentos</a>
+			<a href="<?php echo get_term_link( 7 ); ?>">Reconhecimentos</a>
 		</li>
 
 		<li>
@@ -30,7 +30,7 @@
 
 		<li class="search"></li>
 
-		<li class="idioma">
+		<li class="idioma" style="display: none;">
 			<a href="">EN</a>
 			<a href="">ES</a>
 		</li>

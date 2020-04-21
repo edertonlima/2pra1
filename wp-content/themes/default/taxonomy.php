@@ -7,7 +7,7 @@
 			<ul>
 				<li><a href="<?php echo get_home_url(); ?>" title="Home">Home</a></li>
 				<li><span>></span></li>
-				<li><a href="<?php echo get_home_url(); ?>/projetos" title="Projetos">Projetos</a></li>
+				<li><a href="<?php echo get_post_type_archive_link('projetos'); ?>" title="Projetos">Projetos</a></li>
 				<li><span>></span></li>
 				<li><?php echo $category_current->name; ?></li>
 			</ul>
@@ -18,7 +18,9 @@
 	<section class="box-section">
 		<div class="container">
 
-			<h1>A melhor experiência<br>e retorno para o seu projeto</h1>
+			<h1><?php echo ucfirst($category_current->name); ?></h1>
+			
+			<?php /*
 			<div class="row no-padding list-post projetos">
 
 				<div class="col-12">
@@ -45,23 +47,40 @@
 
 					</ul>
 				</div>
+			</div>
+			*/ ?>
+
+			<div class="row no-padding list-post projetos">
 
 				<?php 		
 				$row = 0;		
 				while ( have_posts() ) : the_post(); 
 
 					//for ($i=0; $i < 3; $i++) { 
-						$row++;
+						$row++; 
 						get_template_part( 'content', 'list-projeto' );
 					//}
 
 				endwhile; ?>
 
-				<div class="col-12 center">
-					<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a>
+			</div>
+
+			<?php if($wp_query->max_num_pages > 1){ ?>
+				<div class="row no-padding list-post projetos row-load-more">
+
 				</div>
 
-			</div>
+				<div class="row no-padding list-post projetos">
+
+					<div class="col-12 center">
+						<button class="load-more btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="<?php echo $category_current->taxonomy; ?>" var-category="<?php echo $category_current->term_id; ?>" var-post-type="projetos" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" id="load-more">
+							mais
+						</button>
+						<?php //<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a> ?>
+					</div>
+
+				</div>
+			<?php } ?>
 
 		</div>
 	</section>
@@ -69,5 +88,11 @@
 <?php get_footer(); ?>
 
 <script type="text/javascript">
+	proj_height = $('.projetos .col-4:first-child').width();
+	$('.projetos .article').height(proj_height);
 
+	$(window).resize(function(){
+		proj_height = $('.projetos .col-4:first-child').width();
+		$('.projetos .article').height(proj_height);
+	});
 </script>

@@ -73,9 +73,9 @@ body * {
 		}
 	}
 
-	.col-4:nth-child(3n+1) {
+	/*.col-4:nth-child(3n+1) {
 		@include clear;
-	}
+	}*/
 
 	&.row-mini {
 		margin-right: -15px;
@@ -103,7 +103,7 @@ body * {
 		.col-12 {
 			h1 {
 				&:first-child {
-					margin-top: 0;
+					//margin-top: 0;
 				}
 			}
 		}
