@@ -90,31 +90,31 @@
 						<?php the_content(); ?>
 					</div>
 
-					<fieldset class="col-7 margin-top clear">
+					<fieldset class="col-10 margin-top clear">
 						<input type="text" name="" placeholder="*Seu nome">
 					</fieldset>
 
-					<fieldset class="col-7 clear">
+					<fieldset class="col-10 clear">
 						<input type="text" name="" placeholder="*Seu e-mail">
 					</fieldset>
 
-					<fieldset class="col-7 clear">
+					<fieldset class="col-10 clear">
 						<input type="text" name="" placeholder="*Empresa">
 					</fieldset>
 
-					<fieldset class="col-7 clear">
+					<fieldset class="col-10 clear">
 						<input type="text" name="" placeholder="*Telefone">
 					</fieldset>
 
-					<fieldset class="col-7 clear">
+					<fieldset class="col-10 clear">
 						<input type="text" name="" placeholder="*Assunto">
 					</fieldset>
 
-					<fieldset class="col-7 clear">
+					<fieldset class="col-10 clear">
 						<textarea name="" placeholder="*Mensagem"></textarea>
 					</fieldset>
 
-					<fieldset class="col-7 right">
+					<fieldset class="col-10 right">
 						<button class="btn mini transparente default">enviar</button>
 					</fieldset>
 					
@@ -128,7 +128,7 @@
 
 
 	<?php if(is_page(10)){ ?>
-	<section class="box-section">
+	<section class="box-section section-mobile-full">
 		<div class="container">
 
 			<h1><?php the_title(); ?></h1> 
@@ -217,9 +217,10 @@
 		responsive:{
 			0:{
 				items:1,
-				nav:true
+				nav:true,
+				margin:0,
 			},
-			600:{
+			680:{
 				items:3,
 				nav:false
 			},

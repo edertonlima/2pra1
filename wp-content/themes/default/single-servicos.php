@@ -35,7 +35,7 @@
 			</div>
 		</section>
 
-		<section class="box-section no-padding">
+		<section class="box-section no-padding section-mobile-full">
 			<div class="container">
 
 				<div class="row">
@@ -71,7 +71,7 @@
 			</div>
 		</section>
 
-		<section class="box-section no-padding-top margin-top">
+		<section class="box-section no-padding-top margin-top section-mobile-full">
 			<div class="list-post">
 
 				<?php 
@@ -183,7 +183,7 @@ endif; ?>
 	if(get_field('arquivo-ebook')){ 
 		$image = get_field('imagem-ebook'); ?>
 
-		<section class="box-section">
+		<section class="box-section section-mobile-full">
 			<div class="container">
 
 				<h2 class="titulo">Acesse nosso conteúdo exclusivo</h2>

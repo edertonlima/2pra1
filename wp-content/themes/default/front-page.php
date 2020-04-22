@@ -62,7 +62,7 @@
 
 	if( have_posts() ){ ?>
 
-		<section class="box-section">
+		<section class="box-section section-mobile-full">
 			<div class="container">
 
 				<h1>Serviços</h1>
@@ -92,7 +92,7 @@
 
 	if( have_posts() ){ ?>
 
-		<section class="box-section">
+		<section class="box-section section-mobile-full">
 			<div class="container">
 						
 				<h1 class="margin-top">Projetos</h1>

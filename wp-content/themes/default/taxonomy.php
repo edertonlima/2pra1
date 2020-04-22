@@ -15,7 +15,7 @@
 		</div>
 	</section>
 
-	<section class="box-section">
+	<section class="box-section section-mobile-full">
 		<div class="container">
 
 			<h1><?php echo ucfirst($category_current->name); ?></h1>

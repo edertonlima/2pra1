@@ -196,14 +196,21 @@
 
 .box-section {
 	.ico-contato {
-		float: left;
 		border: none;
 		max-width: 100%;
 
+		&.conteudo {
+			padding: 0;
+			margin: 0 auto;
+			max-width: 750px;
+			width: 100%;
+		}
+
 		.item {
 			float: left;
-			width: 250px;
-			max-width: 100%;
+			width: 33.333%;
+			max-width: 250px;
+			//max-width: 100%;
 			text-align: center;
 
 			span {

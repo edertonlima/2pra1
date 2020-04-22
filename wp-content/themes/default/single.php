@@ -92,13 +92,19 @@
 
 		if( have_posts() ){ ?>
 
-			<section class="box-section margin-top">
+			<section class="box-section margin-top outros-blogs">
 				<div class="container">
 							
 					<h2>
 						Leia mais
 						<a href="https://ederton.com.br/preview/2pra1/blog" class="btn mini no-padding transparente cinza-claro position-right">ver todos</a>
 					</h2>
+
+				</div>
+			</section>
+
+			<section class="box-section no-padding-top section-mobile-full">
+				<div class="container">
 					
 					<div class="row no-padding list-post blog outros-blogs">
 

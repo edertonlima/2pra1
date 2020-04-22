@@ -12,7 +12,7 @@
 		</div>
 	</section>
 
-	<section class="box-section">
+	<section class="box-section section-mobile-full">
 		<div class="container">
 
 			<h1>Serviços</h1>

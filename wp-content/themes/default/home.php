@@ -23,7 +23,7 @@
 		</div>
 	</section>
 
-	<section class="box-section">
+	<section class="box-section section-mobile-full">
 		<div class="container">
 
 			<h1>A melhor experiência e retorno para o seu projeto</h1>
@@ -91,7 +91,7 @@
 	?>
 
 
-	<section class="box-section">
+	<section class="box-section section-mobile-full">
 		<div class="container">
 
 			<h1><?php echo get_cat_name(6); ?></h1>

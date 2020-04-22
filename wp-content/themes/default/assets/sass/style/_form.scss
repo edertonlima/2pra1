@@ -12,7 +12,7 @@ form {
 		font-style: italic;
 		max-width: 100%;
 		width: 100%;
-		font-size: .85rem; 
+		font-size: $font-size;
 		color: $cor-txt;
 		font-weight: $light;
 		line-height: $height_input;
@@ -26,12 +26,11 @@ form {
 		@include placeholder{
 			opacity: 1;
 			color: $cor-txt;
-			font-style: italic;
 		}
 	}
 
 	input[type='text'], input[type='email'], input[type='password'] {
-		height: $height_input;
+		font-size: $font-size;
 		line-height: $height_input;	
 	}
 
@@ -80,7 +79,7 @@ form {
 		}
 	}
 
-	&.contato {
+	&.contato, &.demonstracao {
 		padding: 0 110px;
 		margin: 30px 0 0;
 	}

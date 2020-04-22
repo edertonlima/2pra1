@@ -45,7 +45,7 @@
 						<fieldset>
 							<input type="text" name="email" placeholder="*Seu e-mail">
 						</fieldset>
-						<button class="btn transparente right">receber</button>
+						<button class="btn mini transparente right">receber</button>
 					</form>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 		<div class="container">
 
 			<h2 class="titulo-form">Agende uma demonstração</h2>
-			<form>
+			<form class="demonstracao">
 				
 				<div class="row">
 					<div class="scrollbar scrollbar-dynamic">
@@ -114,6 +114,25 @@
 			}else{
 				$('.header').removeClass('scroll');
 			}
+
+
+			// MENU MOBILE
+			widthWindow = $(window).width();
+			if(widthWindow < 980){
+				$('.menu-mobile').click(function(){
+					//$('.submenu').removeClass('ativo');
+
+					$(this).toggleClass('open');
+					$('.nav').toggleClass('open');
+					$('body').toggleClass('open');
+				});
+
+				/*$('.btn-menu-mobile').click(function(){
+					$(this).parent().toggleClass('ativo');
+				});*/
+			}
+
+
 		});
 
 		$(window).scroll(function(){
@@ -123,6 +142,16 @@
 			}else{
 				$('.header').removeClass('scroll');
 			}
+		});
+
+		$(window).resize(function(){
+
+			// MENU MOBILE
+			$('.menu-mobile').removeClass('open');
+			$('.nav').removeClass('open');
+			$('body').removeClass('open');
+			//$('.submenu').removeClass('ativo');
+
 		});
 
 	</script>

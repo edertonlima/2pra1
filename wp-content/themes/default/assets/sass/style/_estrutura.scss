@@ -12,6 +12,10 @@ body {
 	&.home, &.single-servicos, &.single-post, &.page {
 		padding-top: 0;
 	}
+
+	&.open {
+		overflow: hidden;
+	}
 }
 
 body * {
@@ -117,6 +121,15 @@ body * {
 		border-left: 1px solid $cor-txt;
 		display: block;
 		text-align: justify;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-webkit-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+		hyphenate-limit-chars: 10 4 4;		
+		-webkit-hyphenate-limit-chars: 10 4 4;
+		-ms-hyphenate-limit-chars: 10 4 4;
+		
 		@include box-sizing;
 
 		&.cont-destaque {
@@ -194,6 +207,10 @@ body * {
 			max-width: 100%;
 			display: table-cell;
 			vertical-align: top;
+
+			iframe {
+				max-width: 100%;
+			}
 		}
 	}
 }

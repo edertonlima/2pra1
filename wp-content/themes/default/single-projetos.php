@@ -33,7 +33,7 @@
 			</div>
 		</section>
 
-		<section class="box-section">
+		<section class="box-section section-mobile-full">
 			<div class="container">
 
 				<div class="row no-padding list-post">
@@ -143,13 +143,20 @@
 
 		if( have_posts() ){ ?>
 
-			<section class="box-section margin-top">
+			<section class="box-section no-padding-bottom outros-projetos">
 				<div class="container">
-							
+
 					<h2>
 						Outros projetos
 						<a href="https://ederton.com.br/preview/2pra1/projetos" class="btn mini no-padding transparente cinza-claro position-right btn-ver-todos">ver todos</a>
 					</h2>
+
+				</div>
+			</section>
+
+			<section class="box-section no-padding-top section-mobile-full">
+				<div class="container">
+							
 					<div class="row no-padding list-post projetos outros-projetos">
 
 						<?php while ( have_posts() ) : the_post();

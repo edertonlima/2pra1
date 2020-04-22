@@ -36,3 +36,12 @@
 		</li>
 	</ul>
 </nav>
+
+	<div class="menu-mobile" id="nav-icon2">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
