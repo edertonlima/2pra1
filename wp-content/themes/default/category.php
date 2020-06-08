@@ -50,6 +50,92 @@
 		</div>
 	</section>
 
+
+	<?php // NA MÍDIA
+		$query = array(
+				//'posts_per_page'	=> 9,
+				'post_type' 	 	=> 'post',
+				'category_name'  => 'na-midia'
+			);
+		query_posts( $query );
+	?>
+
+	<section class="box-section section-mobile-full">
+		<div class="container">
+
+			<h1><?php echo get_cat_name(6); ?></h1>
+
+			<div class="row no-padding list-post blog cat-especifica">
+				<?php while ( have_posts() ) : the_post();
+
+					get_template_part( 'content', '' );
+
+				endwhile; ?>
+			</div>
+
+			<?php /* if($wp_query->max_num_pages > 1){ ?>
+				<div class="row no-padding list-post projetos row-load-more">
+
+				</div>
+
+				<div class="row no-padding list-post projetos">
+
+					<div class="col-12 center">
+						<button class="load-more btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="category" var-category="6" var-post-type="post" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" var-not-category="" id="load-more">
+							mais
+						</button>
+						<?php //<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a> ?>
+					</div>
+
+				</div>
+			<?php } */?>
+
+		</div>
+	</section>
+
+
+	<?php // NOTÍCIAS
+		$query = array(
+				//'posts_per_page'	=> 9,
+				'post_type' 	 	=> 'post',
+				'category_name'  => 'noticias'
+			);
+		query_posts( $query );
+	?>
+
+	<section class="box-section section-mobile-full">
+		<div class="container">
+
+			<h1><?php echo get_cat_name(8); ?></h1>
+
+			<div class="row no-padding list-post blog cat-especifica">
+				<?php while ( have_posts() ) : the_post();
+
+					get_template_part( 'content', '' );
+
+				endwhile; ?>
+			</div>
+
+			<?php /* if($wp_query->max_num_pages > 1){ ?>
+				<div class="row no-padding list-post projetos row-load-more">
+
+				</div>
+
+				<div class="row no-padding list-post projetos">
+
+					<div class="col-12 center">
+						<button class="load-more btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="category" var-category="6" var-post-type="post" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" var-not-category="" id="load-more">
+							mais
+						</button>
+						<?php //<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a> ?>
+					</div>
+
+				</div>
+			<?php } */?>
+
+		</div>
+	</section>
+
 <?php get_footer(); ?>
 
 <script type="text/javascript">

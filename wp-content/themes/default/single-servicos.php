@@ -3,7 +3,14 @@
 	<?php while ( have_posts() ) : the_post();
 		$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'wide' ); ?>
 
-		<section class="box-section no-padding full-height bg-imagem bg-mascara" style="background-image: url('<?php if($imagem[0]){ echo $imagem[0]; } ?>');">
+		<section class="box-section no-padding full-height bg-imagem bg-mascara <?php if(get_field('video')){ echo 'video-single-servico mask-single-servico'; } ?>" style="background-image: url('<?php if(!get_field('video') AND $imagem[0]){ echo $imagem[0]; } ?>');">
+
+			<?php if(get_field('video')){ ?>
+				<video autoplay="true" loop="true" muted="true" class="">
+					<source src="<?php the_field('video'); ?>" type="video/mp4">
+				</video>
+			<?php } ?>
+
 			<div class="container">
 				
 				<div class="box-vertical vertical-bottom">
@@ -156,7 +163,7 @@ endif; ?>
 
 
 
-		<section class="box-section no-padding margin-top full-max-height bg-imagem bg-mascara vermelho" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/ab59cfed-0cc0-44ab-beb8-8874b94052b5c5572409-a018-4e8c-8301-8123efd765042f7a257e-ad8a-4898-a967-76587090ac49cima-carrinho.jpg');">
+		<section class="box-section no-padding margin-top full-max-height bg-imagem bg-mascara vermelho" style="background-image: url('<?php if($imagem[0]){ echo $imagem[0]; } ?>');">
 			<div class="container">
 				
 				<div class="box-vertical vertical-center">

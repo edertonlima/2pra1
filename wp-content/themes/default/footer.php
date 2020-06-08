@@ -1,4 +1,42 @@
 
+
+	<?php $marcas = get_field('marcas','option');
+	if(count($marcas) > 0){ ?>		
+		<section class="box-section box-marcas">
+			<div class="container">
+
+				<h3 class="center"><?php the_field('titulo-marcas','option'); ?></h3>
+
+				<div class="row">
+					<div class="col-12">
+						<?php
+							$num_item = 0; 
+							$i = 0;
+							$count_item = count($marcas);
+						?>
+
+						<div class="marcas owl-carousel owl-theme owl-loaded">
+							<div class="owl-stage-outer">
+								<div class="owl-stage"> 
+								
+									<?php foreach( $marcas as $marca ): ?>
+										<div class="item-cliente owl-item">
+											<img src="<?php echo esc_url($marca['url']); ?>" alt="<?php echo $marca['caption']; ?>">
+										</div>
+									<?php endforeach; ?>
+
+								</div>
+							</div>
+						</div>
+
+					</div>	
+				</div>
+
+			</div>
+		</section>
+	<?php } ?>
+
+
 	<footer class="box-section footer">
 		<div class="container">
 			
@@ -6,20 +44,31 @@
 				<div class="footer-col">
 					<h4>Contato</h4>
 					<p>
-						Parque Tecnológico Alfa - Rod. José Carlos<br>
-						Daux, 600 - João Paulo / Florianópolis SC<br>
-						88030-000
+						<?php the_field('endereco',184); ?>
 					</p>
 
-					<p>+55 48 3024.5212</p>
+					<p><?php the_field('whatsapp',184); ?></p>
 
-					<p><a href="">comercial@doispraum.com.br</a></p>
+					<p>
+						<a href="mailto:<?php the_field('email',184); ?>" title="<?php the_field('email',184); ?>" target="_blank">
+							<?php the_field('email',184); ?>
+						</a>
+					</p>
 
-					<div class="redes">
-						<a href=""><i class="fab fa-facebook-f"></i></a>
-						<a href=""><i class="fab fa-youtube"></i></a>
-						<a href=""><i class="fab fa-twitter"></i></a>
-					</div>
+					<?php if( have_rows('redes-sociais','option') ): ?>
+
+						<div class="redes">
+							<?php while( have_rows('redes-sociais','option') ): the_row(); ?>
+
+								<a href="<?php the_sub_field('url'); ?>" title="<?php the_sub_field('titulo'); ?>" target="_blank">
+									<?php the_sub_field('icone'); ?>
+								</a>
+
+							<?php endwhile; ?>
+						</div>
+						
+					<?php endif; ?>
+
 				</div>
 			
 				<div class="footer-col">
@@ -104,6 +153,36 @@
 
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+	<!-- CAROUSEL -->
+	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/owl-carousel/owl.carousel.min.js"></script>
+
+	<script type="text/javascript">
+		$('.marcas').owlCarousel({
+			loop:false,
+			margin:30,
+			responsiveClass:true,
+			dots:false,
+			nav:true,
+			navText: ['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>'],
+			//rtl:true,
+			responsive:{
+				0:{
+					items:1,
+					nav:false
+				},
+				680:{
+					items:3,
+					nav:false
+				},
+				1000:{
+					items:3,
+					nav:true,
+					loop:false
+				}
+			}
+		})
+	</script>
 
 	<script type="text/javascript">
 

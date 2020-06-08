@@ -21,11 +21,6 @@
 	}
 
 	.article {
-		&.list-servico, &.e-book {
-			height: 60vh;
-			min-height: 500px;
-		}
-
 		position: relative;
 		overflow: hidden;
 		@include animacao-slow;
@@ -37,10 +32,49 @@
 			width: 100%;
 			height: 100%;
 			position: absolute;
-			z-index: 0;
+			z-index: 10;
 			background-color: rgba(#46495c, .5);
 			opacity: 0;
 			@include animacao-slow;
+		}
+
+		&.list-servico, &.e-book {
+			height: 60vh;
+			min-height: 500px;
+
+			.img-servico-mobile {
+				display: none;
+			}
+
+			&.video-servico {
+				height: auto;
+				min-height: 0px;
+				h2 {
+					color: #ffffff;
+					text-shadow: 1px 1px 1px #333;
+				}
+
+				h3 {
+					display: none;
+				}
+
+				.conteudo-list {
+					position: absolute;
+					top: 0px;
+					left: 0px;
+				}
+
+				video {
+					position: relative;
+					z-index: 0;
+					width: 100%;
+					display: block;
+				}
+
+				&:before {
+					opacity: .5;
+				}
+			}
 		}
 
 		.conteudo-list {
@@ -48,7 +82,7 @@
 			height: 100%;
 			padding: 80px 13%;
 			position: relative;
-			z-index: 0;
+			z-index: 20;
 			@include box-sizing;
 
 			span {
@@ -72,10 +106,21 @@
 				@include animacao;
 			}
 
-			a {
+			.btn {
 				opacity: 0;
 				position: absolute;
 				bottom: 80px;
+				@include animacao;
+			}
+
+			i.fa-play-circle {
+				opacity: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				font-size: 105px;
+				color: #fff;
+				margin: -52.5px 0 0 -52.5px;
 				@include animacao;
 			}
 		}
@@ -92,13 +137,18 @@
 				color: #ffffff;
 			}
 
-			h3, a {
+			h3, .btn {
+				opacity: 1;
+			}
+
+			i.fa-play-circle {
 				opacity: 1;
 			}
 		}
 
 		&.video {
 			a {
+				position: absolute;
 				bottom: 50%;
 				left: 50%;
 				margin: 0 0 -52.5px -52.5px;
@@ -326,5 +376,40 @@
 				color: $cor1;
 			}
 		}
+	}
+}
+
+
+.video-single-servico {
+	height: auto;
+	min-height: 0px;
+
+	.container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		top: 0;
+		left: 0;
+		padding: 0;
+
+		.sub-cont {
+			max-width: $width; 
+			width: 100%;
+			padding: 0 $padding-container;
+			height: 100%;
+		}
+
+		.box-destaque .titulo.tit-single {
+			padding-bottom: 45px;
+		}
+	}
+
+	video {
+		display: block;
+		height: auto;
+		width: 100%;
+		position: relative;
+		z-index: 0;
 	}
 }

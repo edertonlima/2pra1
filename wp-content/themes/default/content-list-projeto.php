@@ -15,7 +15,7 @@
 
 ?>
 
-<div class="<?php echo $class; ?>">
+<div class="<?php echo $class; ?>" var="<?php the_title(); ?>">
 	<div class="article bg-imagem" style="background-image: url('<?php if($imagem[0]){ echo $imagem[0]; } ?>');">
 		<a href="<?php the_permalink(); ?>" class="conteudo-list">
 				

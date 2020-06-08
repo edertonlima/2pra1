@@ -48,6 +48,25 @@
 */ ?>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 <?php /*
 
 <link rel="shortcut icon" href="<?php the_field('favicon', 'option'); ?>" type="image/x-icon" />
@@ -167,7 +186,18 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");*/
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=179359752456763&autoLogAppEvents=1"></script>
 	*/ ?>
 
-	<header class="header">
+	<?php 
+		$classHeader = '';
+		if(is_front_page()){
+			if(get_field('select-slide') == 'dinamico'){
+
+				$classHeader = 'scroll-fixed';
+
+			}
+		}
+	?>
+
+	<header class="header <?php echo $classHeader; ?>">
 		<div class="container">
 			<?php /*
 			<a href="javascript:" class="menu-mobile"></a>
@@ -182,8 +212,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");*/
 			*/ ?>
 			<div class="logo">
 				<a href="<?php echo get_home_url(); ?>" title="">
-					<span class="branco"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2pra1-branco.png"></span>
-					<span class="vermelho"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2pra1-vermelho.png"></span>
+					<span class="branco"><img src="<?php the_field('logo_branca','option'); ?>"></span>
+					<span class="vermelho"><img src="<?php the_field('logo','option'); ?>"></span>
 				</a>
 			</div>
 			<?php get_template_part( 'nav' ); ?>

@@ -4,14 +4,21 @@
 		$category_current = get_queried_object();
 		$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'wide' ); ?>
 
-		<section class="box-section no-padding full-height bg-imagem bg-mascara parallax" style="background-image: url('<?php if($imagem[0]){ echo $imagem[0]; } ?>');">
+		<section class="box-section no-padding full-height bg-imagem bg-mascara <?php if(get_field('video')){ echo 'video-single-servico mask-single-servico'; } ?>" style="background-image: url('<?php if(!get_field('video') AND $imagem[0]){ echo $imagem[0]; } ?>');">
+
+			<?php if(get_field('video')){ ?>
+				<video autoplay="true" loop="true" muted="true" class="">
+					<source src="<?php the_field('video'); ?>" type="video/mp4">
+				</video>
+			<?php } ?>
+
 			<div class="container">
 				
-				<div class="box-vertical vertical-center">
+				<div class="box-vertical vertical-bottom">
 					<div class="conteúdo-vertical">
 						
 						<div class="box-destaque">
-							<span class="titulo medium">
+							<span class="titulo tit-single">
 								<?php the_title(); ?>
 							</span>
 
@@ -80,10 +87,12 @@
 
 		<?php
 		$category = wp_get_post_terms( $post->ID, 'category' )[0];
+		//var_dump($category);
 		$query = array(
 				'posts_per_page'	=> 2,
 				'post_type' 	 	=> 'post',
 				'category'			=> $category->taxonomy,
+				'category_name'  	=> $category->slug,
 				'post__not_in'		=> array( $post->ID ),
 				'orderby' => 'rand',
 				'order'    => 'ASC'

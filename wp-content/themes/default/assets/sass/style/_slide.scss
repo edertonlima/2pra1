@@ -198,3 +198,24 @@
 		}
 	}
 }
+
+
+
+.slide-image-hover {
+	width: 100%;
+	position: relative;
+
+	img:not(.img-bg) {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		&.ativo {
+			opacity: 1;
+		}
+	}
+ 
+	.img-bg {
+		width: 100%;
+	}
+}

@@ -8,7 +8,7 @@ strong, .bold {
 
 .logo {
 	float: left;
-	width: 200px;
+	width: 250px;
 	height: 47px;
 	
 	a {
@@ -36,7 +36,7 @@ strong, .bold {
 	}
 }
 
-.home, .single-servicos, .single-post, .page {
+.home, .single-servicos, .single-post, .page, .post-type-archive-servicos {
 	.logo {
 		a {
 			span {
@@ -46,6 +46,24 @@ strong, .bold {
 
 				&.vermelho {
 					opacity: 0;
+				}
+			}
+		}
+	}
+
+	.header {
+		&.scroll-fixed {
+			.logo {
+				a {
+					span {
+						&.branco {
+							opacity: 0;
+						}
+
+						&.vermelho {
+							opacity: 1;
+						}
+					}
 				}
 			}
 		}
@@ -248,8 +266,11 @@ p {
 }
 
 
+a {
+	cursor: pointer;
+}
 
-a, button {
+a, button, .btn-in {
 	cursor: pointer;
 	text-decoration: none;
 	@include animacao;
@@ -289,6 +310,16 @@ a, button {
 
 				i {
 					font-size: 1.75rem;
+				}
+			}
+
+			&.load-more-projetos {
+				line-height: 55px;
+
+				i {
+					font-size: 1.75rem;
+					position: relative;
+					top: -1px;
 				}
 			}
 		}

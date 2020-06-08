@@ -1,33 +1,76 @@
 <?php get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<?php $banner_image = get_field('imagem-slide'); ?>
-	<section class="box-section no-padding full-height bg-imagem bg-mascara" style="background-image: url('<?php echo $banner_image['sizes']['wide']; ?>');">
-		<div class="container">
+	<?php if(get_field('select-slide') == 'video'){ ?>
+		
+		<section class="box-section video-slide no-padding full-height bg-imagem bg-mascara">
 			
-			<div class="box-vertical vertical-center">
-				<div class="conteúdo-vertical">
-					
-					<div class="box-destaque">
-						<span class="titulo medium">
-							<?php the_field('titulo-slide'); ?>
-						</span>
+			<video autoplay="true" loop="true" muted="true">
+				<source src="<?php the_field('video-slide'); ?>" type="video/mp4">
+			</video>
 
-						<?php if(get_field('subtitulo-slide')){ ?>
-							<span class="subtitulo">
-								<?php the_field('subtitulo-slide'); ?>
-							</span>
-						<?php } ?>
+			<div class="container">
+				<div class="sub-cont">
+				
+					<div class="box-vertical vertical-center">
+						<div class="conteúdo-vertical">
+							
+							<div class="box-destaque">
+								<span class="titulo">
+									<?php the_field('titulo-slide'); ?>
+								</span>
 
-						<?php if(get_field('link-slide')){ ?>
-							<a href="<?php the_field('link-slide'); ?>" class="btn extra transparente"><?php the_field('titulo-link-slide'); ?></a>
-						<?php } ?>
+								<?php /*if(get_field('subtitulo-slide')){ ?>
+									<span class="subtitulo">
+										<?php the_field('subtitulo-slide'); ?>
+									</span>
+								<?php } */?>
+
+								<?php /*if(get_field('link-slide')){ ?>
+									<a href="<?php the_field('link-slide'); ?>" class="btn extra transparente"><?php the_field('titulo-link-slide'); ?></a>
+								<?php } */?>
+							</div>
+							
+						</div>
 					</div>
+				
 				</div>
 			</div>
+		</section>
 
-		</div>
-	</section>
+	<?php }else{
+		$banner_image = get_field('imagem-slide'); ?>
+
+		<section class="box-section no-padding full-height bg-imagem bg-mascara" style="background-image: url('<?php echo $banner_image['sizes']['wide']; ?>');">
+
+			<div class="container">
+				
+				<div class="box-vertical vertical-center">
+					<div class="conteúdo-vertical">
+						
+						<div class="box-destaque">
+							<span class="titulo">
+								<?php the_field('titulo-slide'); ?>
+							</span>
+
+							<?php if(get_field('subtitulo-slide')){ ?>
+								<span class="subtitulo">
+									<?php the_field('subtitulo-slide'); ?>
+								</span>
+							<?php } ?>
+
+							<?php if(get_field('link-slide')){ ?>
+								<a href="<?php the_field('link-slide'); ?>" class="btn extra transparente"><?php the_field('titulo-link-slide'); ?></a>
+							<?php } ?>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	<?php } ?>
 
 	<section class="box-section breadcrumbs">
 		<div class="container">
@@ -53,21 +96,22 @@
 						<div class="item endereco">
 							<i class="far fa-map"></i>
 							<span>
-								Parque Tecnológico Alfa - <br>
-								Rod. José Carlos Daux, 600<br>
-								João Paulo / Florianópolis<br>
-								SC 88030-000
+								<?php the_field('endereco'); ?>
 							</span>
 						</div>
 
 						<div class="item center whatsapp">
-							<i class="fab fa-whatsapp"></i>
-							<span>+55 48 3024.5212</span>
+							<a href="https://api.whatsapp.com/send?phone=<?php the_field('whatsapp_api'); ?>&amp;text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20falar%20com%20voc%C3%AA!%20" target="_blank" title="whatsapp">
+								<i class="fab fa-whatsapp"></i>							
+								<span><?php the_field('whatsapp'); ?></span>
+							</a>
 						</div>
 
 						<div class="item center email">
-							<i class="far fa-envelope"></i>
-							<span>comercial@doispraum.com.br</span>
+							<a href="mailto:<?php the_field('email'); ?>" title="<?php the_field('email'); ?>" target="_blank">
+								<i class="far fa-envelope"></i>
+								<span><?php the_field('email'); ?></span>
+							</a>
 						</div>
 					</div>
 
@@ -247,4 +291,67 @@
 			}
 		}
 	})
+
+	<?php /*
+
+	$(document).ready(function(){
+
+		<?php if(get_field('select-slide') == 'dinamico'){ ?>
+
+			hover_auto = true;
+			img_hover = 0;
+
+			setInterval(function(){ 
+				if(hover_auto == true){
+					img_hover++
+
+					if(img_hover == 5){
+						img_hover = 1;
+					}
+
+					$('.slide-image-hover img').removeClass('ativo');
+					$('#img-'+img_hover).addClass('ativo');
+					console.log('auto - ' + img_hover);
+				}
+			}, 4000);
+
+			$('.btn-hover').hover(
+				function() {
+
+					hover_auto = false;
+					img_hover = $(this).attr('var-img');
+					$('.slide-image-hover img').removeClass('ativo');
+					$('#img-'+img_hover).addClass('ativo');
+					//console.log('pause');
+					//console.log('houve - ' + img_hover);
+				
+				}, function() {
+					hover_auto = true;
+					//console.log('auto');
+				}
+			);
+
+		<?php }else{ ?>
+
+			<?php if(get_field('select-slide') == 'video'){ ?>
+						
+				//$(document).ready(function(){
+					video_width = ($('.video-slide').width())/2.333333;
+					$('.video-slide .container').height(video_width);
+					$('.video-slide video').height(video_width);
+				//});
+
+				$(window).resize(function(){
+					video_width = ($('.video-slide').width())/2.333333;
+					$('.video-slide .container').height(video_width);
+					$('.video-slide video').height(video_width);
+				});
+
+			<?php } ?>
+
+		<?php } ?>
+	});
+
+	*/ ?>
+
 </script>

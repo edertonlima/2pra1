@@ -9,7 +9,7 @@ body {
 	background: #ffffff;
 	padding-top: 150px;
 
-	&.home, &.single-servicos, &.single-post, &.page {
+	&.home, &.single-servicos, &.single-post, &.page, &.post-type-archive-servicos {
 		padding-top: 0;
 	}
 
@@ -251,8 +251,18 @@ body * {
 
 	&.vermelho {
 		&:before {
-			background-color: rgba($cor1, .5);
+			background-color: rgba($cor1, .8);
 		}		
+	}
+
+	&.mask-single-servico {
+		&:before {
+			z-index: 1;
+		}
+
+		.container {
+			z-index: 2;
+		}
 	}
 }
 

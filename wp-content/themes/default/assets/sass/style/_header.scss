@@ -9,10 +9,15 @@
 	@include animacao-slow;
 }
 
-.home, .single-servicos, .single-post, .page {
+.home, .single-servicos, .single-post, .page, .post-type-archive-servicos {
 	.header {
 		padding: 40px 0;
 		background-color: transparent;
+		  
+		&.scroll-fixed {
+			background-color: #ffffff;
+			padding: 20px 0;
+		}
 
 		&.scroll {
 			background-color: #ffffff;

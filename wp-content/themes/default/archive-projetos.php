@@ -49,14 +49,9 @@
 
 			<div class="row no-padding list-post projetos">
 
-				<?php 		
-				$row = 0;		
-				while ( have_posts() ) : the_post(); 
+				<?php while ( have_posts() ) : the_post(); 
 
-					//for ($i=0; $i < 3; $i++) { 
-						$row++; 
-						get_template_part( 'content', 'list-projeto' );
-					//}
+					get_template_part( 'content', 'list-projeto' );
 
 				endwhile; ?>
 
@@ -70,10 +65,9 @@
 				<div class="row no-padding list-post projetos">
 
 					<div class="col-12 center">
-						<button class="load-more btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="categoria_projetos" var-category="" var-post-type="projetos" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" id="load-more">
+						<button class="load-more-projetos btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="categoria_projetos" var-category="" var-post-type="projetos" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" id="load-more">
 							mais
 						</button>
-						<?php //<a href="" class="btn btn-mais extra transparente cinza-claro">mais</a> ?>
 					</div>
 
 				</div>

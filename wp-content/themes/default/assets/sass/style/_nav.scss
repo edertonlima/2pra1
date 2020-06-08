@@ -41,10 +41,26 @@
 	}
 }
 
-.home, .single-servicos, .single-post, .page {
+.home, .single-servicos, .single-post, .page, .post-type-archive-servicos {
 	.nav {
 		a, a i {
 			color: #ffffff;
+		}
+	}
+	
+	.header {
+		&.scroll-fixed {
+			.nav {
+				a, a i {
+					color: $cor-txt;
+				}	
+
+				&.open {
+					a, a i {
+						color: #ffffff;
+					}	
+				}
+			}
 		}
 	}
 }
@@ -125,7 +141,7 @@
 }
 
 .header {
-	&.scroll {
+	&.scroll, &.scroll-fixed {
 		#nav-icon2 {
 			span {
 				background: $cor1;
