@@ -1,0 +1,31 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.1.7.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>Added &quot;Remote WPML config files&quot; functionality</li>
+<li>Added shortcodes for language switchers</li>
+<li>Added template functions for reading/saving WPML settings, for future use</li>
+<li>Added various descriptions of WPML settings, displayed on configuration screens</li>
+<li>New version of installer</li>
+<li>When wp-admin language is switched to non default and user will update any plugin or theme configuration, this value will be recognized as translation and updated correctly</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>Compatibility with WP 4.0: Removed like_escape()* calls</li>
+<li>Fixed broken relationship consistency when translating posts</li>
+<li>Fixed hreflang attribute for tag/category archive pages</li>
+<li>Fixed permissions checking for document translators</li>
+<li>Fixed url filters for different languages in different domains configured</li>
+<li>Fixed: media tags added to default language instead of translation</li>
+<li>get_custom_post_type_archive_link() now always returns correct link</li>
+<li>In icl_object_id we were checking if post type is registered: WordPress doesn&#39;t require this, so we removed this to be compatible with filters from other plugins</li>
+<li>Replaced strtolower() function calls with mb_strtolower() and gained better compatibility with non-ASCII languages</li>
+<li>WP SEO plugin compatibility enhancements</li>
+</ul>
+
+      </body>
+    </html>

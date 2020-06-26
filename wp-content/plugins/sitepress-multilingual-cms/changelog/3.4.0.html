@@ -1,0 +1,64 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.4.0.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>[wpmltm-1189] Implemented new design for translation editor.</li>
+<li>[wpmlcore-2774] Implemented new design for taxonomy translation.</li>
+<li>[wpmlcore-2773] Added ability to export all/filtered jobs in WPML -&gt; Translations (Translations Queue)</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>[wpmltm-1442] Resolved SQL errors when sending a job to a translation service fails</li>
+<li>[wpmltm-1401] Fixed caching issue on WP-Engine when new terms are created.</li>
+<li>[wpmltm-1400] Fixed issue when translation job wrongly updated when sending batch failed.</li>
+<li>[wpmltm-1395] Fixed creation of slug when &quot;Copy from original language if translation language uses encoded URLs&quot; is selected.</li>
+<li>[wpmltm-1351] Fixed <code>\WPML_Admin_Post_Actions::get_trid_from_referer</code>function to get trid form refferer only if needed</li>
+<li>[wpmltm-1343] Keep translation status when it&#39;s updated.</li>
+<li>[wpmlst-817] Fixed XSS issue with unescaped output.</li>
+<li>[wpmlst-778] CPT archive slug wrongly translated when <code>has_archive</code> starts with the rewrite slug of CPT</li>
+<li>[wpmlcore-3015] Raised z-index of language switcher, to solve a compatibility issue with the twenty-six theme.</li>
+<li>[wpmlcore-3002] Escape Preserve url parameters on Languages page.</li>
+<li>[wpmlcore-3000] Fixed issue with translation of &quot;Uncategorized&quot; term when not using English as default language</li>
+<li>[wpmlcore-2998] Fixed widget language switcher preview to show the current native language correctly</li>
+<li>[wpmlcore-2989] Fixed color presets for the footer language switcher.</li>
+<li>[wpmlcore-2988] Removed unneeded dependencies checks in admin pages: this now runs only once and later only when activating/deactivating plugins</li>
+<li>[wpmlcore-2972] Minor improvement to how WPML fetch updated translations of WordPress strings.</li>
+<li>[wpmlcore-2967] Display custom posts as disabled on the multilingual content page if they are set as don&#39;t translate in wpml-config.xml files.</li>
+<li>[wpmlcore-2951] Fixed Menus Sync so the links to menu strings are now only displayed for already existing menus</li>
+<li>[wpmlcore-2948] Fixed issue where unexpected menu items were created on page duplication with &quot;Auto add pages&quot; option enabled.</li>
+<li>[wpmlcore-2929] Fixed compatibility issue with <code>hyperdb</code> which prevents from populating <code>icl_languages</code> table</li>
+<li>[wpmlcore-2918] Resolved issue with autoloader class when brackets are used in the website&#39;s path</li>
+<li>[wpmlcore-2916] Fixed notice shown on &quot;Inactive content&quot; section, after changing the default language and removing it from the active languages</li>
+<li>[wpmlcore-2899] Replaced use of <code>$HTTP_RAW_POST_DATA</code> with <code>php://input</code></li>
+<li>[wpmlcore-2897] Fixed duplication of featured image where the flag &quot;Duplicate featured image to translations&quot; was ignored</li>
+<li>[wpmlcore-2878] Queries are not altered when browser redirection is enabled</li>
+<li>[wpmlcore-2841] <code>parse_url</code> was returning inconsistent results depending on PHP version</li>
+<li>[wpmlcore-2840] Fixed issue with missing cron job to publish future posts for translations when &quot;Sync publishing date&quot; is enabled.</li>
+<li>[wpmlcore-2803] Form input labels are properly linked to their inputs in WPML &gt; Languages</li>
+<li>[wpmlcore-2797] 301 redirects on product page with non-ASCII characters in slug</li>
+<li>[wpmlcore-2795] <code>is_front_page()</code> did not work with &quot;lang&quot; parameter and another parameter</li>
+<li>[wpmlcore-2789] Deep nested taxonomy queries were not adjusted</li>
+<li>[wpmlcore-2731] Display the hreflang meta even if the post has no translations, as long as it&#39;s set to be translatable</li>
+<li>[wpmlcore-2728] Removed the language directory for media files links attached to root page</li>
+<li>[wpmlcore-2727] Setup Wizard - Default language was ignored after changing it</li>
+<li>[wpmlcore-2720] Avoid language parameter for search when language negotiation is not set to language as a parameter</li>
+<li>[wpmlcore-2704] Fixed language links position in Appearance -&gt; Menus for RTL admin languages</li>
+<li>[wpmlcore-2701] Yoast SEO Premium - stop it from automatically creating a redirect when a duplicated post is updated.</li>
+<li>[wpmlcore-2658] The query is now parsed by WPML on AJAX requests (for 3rd part compatibility)</li>
+<li>[wpmlcore-2647] Added a new hook <code>wpml_url_converter_get_abs_home</code> (for third part plugins compatibility)</li>
+<li>[wpmlcore-2619] Improved speed of the archive page when many languages are active</li>
+<li>[wpmlcore-2595] Improved URL conversion when posts or terms translations have different slugs than the original</li>
+<li>[wpmlcore-2589] Show language switcher if CPT is set to do nothing</li>
+<li>[wpmlcore-2447] A warning was thrown when saving WPML language switcher options and <code>ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS</code> set to <code>true</code></li>
+<li>[wpmlcore-2246] Fixed text orientation for RTL languages in install wizard step 2</li>
+<li>[wpmlcore-2198] When mixing parameter and slug for custom taxonomies, an error was thrown in WP 4.4</li>
+<li>[wpmlcore-1861] Fixed hook &quot;wpml_make_post_duplicates&quot; to duplicates custom post fields.</li>
+<li>[wpmlcore-1269] Strings are now translated in step 2 of the install wizard</li>
+</ul>
+
+      </body>
+    </html>

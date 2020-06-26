@@ -1,0 +1,59 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.3.7.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>[wpmltm-1215] Hide system fields when displaying custom fields and terms meta</li>
+<li>[wpmlcore-2708] Added an option in &quot;WPML -&gt; Languages -&gt; SEO Options&quot; to chose when to render the <code>hreflang</code> links</li>
+<li>[wpmlcore-2676] WordPress SEO user meta fields are now translatable with WPML String Translation</li>
+<li>[wpmlcore-2667] The <code>Language tag</code> in <em>WPML</em> -&gt; <em>Languages</em> -&gt; <em>Edit Languages</em> is now pre-filled, for known languages, with a two letters language code (same as the language code). Users can still use language codes with variations.</li>
+<li>[wpmlcore-2633] Auto-disconnect duplicates only if there are changes.</li>
+<li>[wpmlcore-2593] Added <code>wpml_element_trid</code> to get the <code>trid</code> of a translated element: required for <code>wpml_get_element_translations</code> filter and others which expect this argument.</li>
+<li>[wpmlcore-2574] Auto-disconnect duplicates when they are edited</li>
+<li>[wpmlcore-2541] Removal of &quot;icon-32&quot; usage</li>
+<li>[wpmlcore-2495] Increased the accepted lenght of &quot;Default Locale&quot; and &quot;Tag&quot; in the languages table, so to allow variations such as &quot;de_DE_formal&quot;</li>
+<li>[wpmlcore-1861] Fixed hook &quot;wpml_make_post_duplicates&quot; to duplicates custom post fields.</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>[wpmlcore-873] Fixed rtl alignment for language Urdu</li>
+<li>[wpmlcore-2761] Enforced security</li>
+<li>[wpmlcore-2745] Fix redirect for hidden language when using languages in domains</li>
+<li>[wpmlcore-2697] Fixed glitch in screen &quot;Menus&quot; for select box: &quot;Translation of&quot; for WP 4.5</li>
+<li>[wpmlcore-2680] Added an option in &quot;WPML -&gt; Languages -&gt; SEO Options&quot; to chose when to render the <code>hreflang</code> links</li>
+<li>[wpmlcore-2675] Fixed potential bug with old PHP version (&lt;5.2.9) when filtering posts</li>
+<li>[wpmlcore-2664] Fixed notices when updating to latest version with browser redirection activated.</li>
+<li>[wpmlcore-2646] Improved <code>sitepress.js</code> to use <code>var</code> when declaring variables, so to allow minification and combination of scripts in strict mode</li>
+<li>[wpmlcore-2638] <code>wp_get_archives</code> now works for any custom post type</li>
+<li>[wpmlcore-2629] Fixed Post/Pages accessible without language directory when root page is enabled</li>
+<li>[wpmlcore-2625] Fix language selectors on taxonomy edit screens for WP 4.5</li>
+<li>[wpmlcore-2624] Improved post date syncronization.</li>
+<li>[wpmlcore-2623] Fixed issue with missing trailing slashes when Yoast SEO is enabled.</li>
+<li>[wpmlcore-2612] Fixed unexpected browser redirection on root page</li>
+<li>[wpmlcore-2608] Fixed Yoast SEO sitemap generated, in directory per language excludes other languages.</li>
+<li>[wpmlcore-2606] Added a warning for SEO issues with automatic redirection</li>
+<li>[wpmlcore-2604] Fixed compatibility issue with Yoast SEO when domain per language is used.</li>
+<li>[wpmlcore-2602] Fixed post status synchronization if &quot;Copy publishing date&quot; option is used.</li>
+<li>[wpmlcore-2596] Fixed issued with different domain per language and domains beginning with number</li>
+<li>[wpmlcore-2589] Show language switcher if CPT is set to do nothing</li>
+<li>[wpmlcore-2586] Avoid redeclaring the <code>Twig_Autoloader</code> class, if another plugin or theme already declared it.</li>
+<li>[wpmlcore-2577] Fixed issue with WP SEO disabling Adjust IDs for multilingual functionality</li>
+<li>[wpmlcore-2573] Fixed bug when <code>wpml_active_languages</code> filter hook is called before or during <code>wp</code> action hook</li>
+<li>[wpmlcore-2572] Limit query modification in class Page_Name_Query_Filter</li>
+<li>[wpmlcore-2553] Fixed duplciated URI when it contains a query string and languages in domains is used.</li>
+<li>[wpmlcore-2537] Fixed hook &quot;wpml_make_post_duplicates&quot; to produce duplicate post instead of independent translation.</li>
+<li>[wpmlcore-2529] Fixed default category mismatch when adding a new language.</li>
+<li>[wpmlcore-2524] Fixed post with same name was creating the same sample permalink</li>
+<li>[wpmlcore-2523] Fixed issue in Yoast SEO sitemap which was not showing taxonomies in other languages than default</li>
+<li>[wpmlcore-2206] Fixed edit language issue when option &#39;Use flag from WPML&#39; for flag file is chosen</li>
+<li>[wpmlcore-2179] Fixed issue inconsistency with Wordpress core - pages can be accessed trough category.</li>
+<li>[wpmlcore-2143] Remove non-translators cache from options.</li>
+<li>[wpmlcore-2067] When the blog page is deleted, and then re-translated, is now possible to set the blog page in Settings &gt; Reading</li>
+<li>[wpmlcore-1428] Removed Moldavian language, since it&#39;s a non existing language (use Romanian instead).</li>
+</ul>
+
+      </body>
+    </html>

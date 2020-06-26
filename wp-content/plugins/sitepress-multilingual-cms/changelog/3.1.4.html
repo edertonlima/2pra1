@@ -1,0 +1,45 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.1.4.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>Added admin notices for custom post types set as translatable and with translatable slugs when translated slugs are missing</li>
+<li>Added support to users with corrupted settings</li>
+<li>Generated keys of cached data should use the smallest possible amount of memory</li>
+<li>Improved language detection from urls when using different domains</li>
+<li>The feature that allows to set orphan posts as source of other posts has been improved in order to also allow to set the orphan post as translation of an existing one</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>Custom Fields set to be copied won&#39;t get lost anymore</li>
+<li>Error in all posts page, where there are no posts</li>
+<li>Excluded/included posts in paginated custom queries won&#39;t cause any notice message</li>
+<li>Fixed icl_migrate_2_0_0() logic</li>
+<li>Fixed languages.csv file for Portuguese (Portugal) and Portuguese (Brazilian) mixed up --this requires a manual fix in languages editor for existing sites using one or both languages--</li>
+<li>Fixed locale for Vietnamese (from &quot;vn&quot; to &quot;vi&quot;)</li>
+<li>Infinite loop in auto-adjust-ids</li>
+<li>Languages in directories produces 404 for all pages when HTTP is using non standard 80 port</li>
+<li>Languages settings -&gt; Language per domain: custom languages generate a notice</li>
+<li>Languages settings -&gt; Language per domain: once selected and page is reloaded, is the option is not properly rendered</li>
+<li>Menu stuck on default language</li>
+<li>Pages with custom queries won&#39;t show 404 errors</li>
+<li>php notice when adding a custom taxonomy to a custom post</li>
+<li>Pre-existing untranslatable custom post types disappears once set as translatable</li>
+<li>Removed language breakdown for Spam comments</li>
+<li>Replace hardcoded references of &#39;sitepress-multilingual-cms&#39; with ICL_PLUGIN_FOLDER</li>
+<li>Replace hardcoded references of &#39;wpml-string-translation&#39; with WPML_ST_FOLDER</li>
+<li>Replace hardcoded references of &#39;wpml-translation-management&#39; with WPML_TM_* FOLDER</li>
+<li>Scheduled posts won&#39;t lose their translation relationship</li>
+<li>The &quot;This is a translation of&quot; drop down wasn&#39;t filled for non-original content</li>
+<li>The default menu in other language has gone</li>
+<li>The default uncategorized category doesn&#39;t appear in the default language</li>
+<li>Translations lose association</li>
+<li>Updated translations</li>
+<li>When a database upgrade is required, it won&#39;t fail with invalid nonce</li>
+</ul>
+
+      </body>
+    </html>

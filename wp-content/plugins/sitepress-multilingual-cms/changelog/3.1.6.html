@@ -1,0 +1,45 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.1.6.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>Added debug information box to WPML &gt;* Support page</li>
+<li>Administrator can add user role to display hidden languages</li>
+<li>Languages can have now apostrophes in their names</li>
+<li>New way to define WPML_TM_URL is now tolerant for different server settings</li>
+<li>Time of first activation of WPML plugin reduced to about 5% of previous results</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>Added filtering stylesheet URI back</li>
+<li>Added filters to be applied when custom fields are duplicated</li>
+<li>Broken language switcher in custom post type archive pages was fixed</li>
+<li>constants ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS + ICL_DONT_LOAD_LANGUAGES_JS are respected now when JS and CSS files are loaded</li>
+<li>Enhanced filtering of home_url() function</li>
+<li>Fixed broken wp_query when querying not translatable Custom Post Type by its name: WPML was removing this name, which resulted with wrong list of posts</li>
+<li>Fixed compatibility with new version of NextGen Gallery plugin</li>
+<li>Fixed possible SQL injections</li>
+<li>Fixed string translation for multilevel arrays where content was indexed by numbers, it was not possible to translate elements on position zero</li>
+<li>Fixed warning in sitepress::get_inactive_content()</li>
+<li>Fixed widget previews</li>
+<li>Fixed wrong post count for Language Links</li>
+<li>Function &#39;get_post_type_archive_link&#39; was not working with WPML, it is fixed now</li>
+<li>Function url_to_postid() is now filtered by WPML plugin to return correct post ID</li>
+<li>get_term_adjust_id cache fixed to work also if term is in multiple taxonomies</li>
+<li>icl_object_id works now for private posts</li>
+<li>Improved translation of hierarchical taxonomies</li>
+<li>Removed references to global $wp_query in query filtering functions</li>
+<li>Support for translate_object_id filter - this can be used in themes instead of the icl_object_id function</li>
+<li>Translated drafts are saved now with correct language information</li>
+<li>When was set root page, secondary loops displayed wrong results</li>
+<li>WordPress Multisite: when you switch between blogs, $sitepress-&gt;get_default_language() returned sometimes wrong language. It is fixed</li>
+<li>WP SEO plugin compatibility enhancements</li>
+<li>wp_query can have now more than one slug passed to category_name</li>
+<li>WPML is no longer removing backslashes from post content, when post it duplicated</li>
+</ul>
+
+      </body>
+    </html>

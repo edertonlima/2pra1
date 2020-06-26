@@ -1,0 +1,44 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>3.2.3.md</title>
+      </head>
+      <body>
+        <h1 id="features">Features</h1>
+<ul>
+<li>Improved caching of posts, taxonomy translation data, and strings</li>
+<li>Improved general performance</li>
+<li>Improved menus synchronization performances</li>
+<li>New hooks added (see <a href="https://wpml.org/documentation/support/wpml-coding-api/wpml-hooks-reference/">https://wpml.org/documentation/support/wpml-coding-api/wpml-hooks-reference/</a>)</li>
+<li>Wildcard entries for admin string settings now work for sub-keys on all levels in addition to top-level keys</li>
+</ul>
+<h1 id="fixes">Fixes</h1>
+<ul>
+<li>Access</li>
+<li>Changing admin language on one site (multisite) does not sets admin language on all sites anymore</li>
+<li>Fixed &quot;This is a translation of&quot; being empty when creating a new translation</li>
+<li>Fixed &quot;This is a translation of&quot; so it&#39;s enabled correctly</li>
+<li>Fixed &#39;wpml_active_languages&#39; filter so it returns languages with correct data</li>
+<li>Fixed a potential security issue</li>
+<li>Fixed an issue in where attachments were wrongfully filtered by language and hence not displayed in the front-end in some cases</li>
+<li>Fixed an issue preventing subsites in a subdirectory multisite setup from completing the last setup step</li>
+<li>Fixed domain name mapping when a domain name in one language includes the domain name from another language</li>
+<li>Fixed issue where urls pointing at hidden laguage posts were redirected incorrectly when usinging the languages as parameters setting</li>
+<li>Fixed issues resolving hierarchical page URLs when parent and child use the same page-slug</li>
+<li>Fixed language switcher not filtering out empty date archive translations</li>
+<li>Fixed missing parentheses in mobile switcher</li>
+<li>Fixed page template being unchangeable in translated content, after deactivating the &quot;Synchronize page template&quot; setting</li>
+<li>Fixed problem with Greek characters in taxonomy names causing problems with taxonomy translations editor</li>
+<li>Fixed redirection issues when the same slug is used in translations with hierarchical post types</li>
+<li>Fixed several glitches and issues related to the menus synchronization</li>
+<li>Fixed WPML breaking XML-RPC calls</li>
+<li>Fixed wrong order of languages when using <code>icl_get_languages</code> with <code>orderby=name</code></li>
+<li>MU Domain Mapping</li>
+<li>Removed creation of duplicated &#39;update_wpml_config_index&#39; cron job</li>
+<li>Removed errors when deactivating WPML for a subsite in multisite install</li>
+<li>When &#39;Language as Parameter&#39; is used, wp_link_pages() pagination produce now a properly formed URL</li>
+<li>WooCommerce</li>
+</ul>
+
+      </body>
+    </html>

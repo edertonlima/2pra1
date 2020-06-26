@@ -1,0 +1,293 @@
+html {
+	font-size: 100%; 
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	//min-width: $width;
+	background: #ffffff;
+	padding-top: 150px;
+
+	&.home, &.single-servicos, &.single-post, &.page, &.post-type-archive-servicos {
+		padding-top: 0;
+	}
+
+	&.open {
+		overflow: hidden;
+	}
+}
+
+body * {
+	font-family: $font-family;
+	color: $cor-txt;
+	line-height: $font-size+.25;
+	font-weight: $light;
+	font-size: $font-size; 
+}
+
+.container {
+	max-width: $width; 
+	width: 100%;//$width; 
+	//width: 100%;
+	padding: 0 $padding-container;
+	margin: 0 auto;
+	position: relative;
+	@include box-sizing;
+	@include clear;
+}
+
+.row {
+	display: block;
+	@include clear();
+
+	&:not(.no-padding){
+		margin-right: ($padding-col)*(-1);
+		margin-left: ($padding-col)*(-1);
+
+		[class*="col-"] {
+			padding-right: $padding-col; 
+			padding-left: $padding-col;
+		}
+	}
+
+	&.no-padding {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	[class*="col-"] {
+		float: left;
+		@include box-sizing();
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	@for $i from 1 through 12 {
+		.col-#{$i} {
+			width: $i*(100%/12);
+		}
+	}
+
+	@for $i from 1 through 12 {
+		.col-m-#{$i} {
+			margin-left: $i*(100%/12);
+		}
+	}
+
+	/*.col-4:nth-child(3n+1) {
+		@include clear;
+	}*/
+
+	&.row-mini {
+		margin-right: -15px;
+		margin-left: -15px;
+
+		[class*="col-"] {
+			padding-right: 15px; 
+			padding-left: 15px;
+		}
+	}
+}
+
+.box-section {
+	@include clear;
+	@include box-sizing;
+	width: 100%;
+	position: relative;
+	padding: 80px 0 0;
+
+	&.margin-top {
+		margin-top: 80px;
+	}
+
+	.row {
+		.col-12 {
+			h1 {
+				&:first-child {
+					//margin-top: 0;
+				}
+			}
+		}
+	}
+
+	.conteudo {
+		//width: 100%;
+		max-width: 780px;
+		padding: 15px 0 15px 55px;
+		margin: 0px 0 0 55px;
+		border-left: 1px solid $cor-txt;
+		display: block;
+		text-align: justify;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		/*-webkit-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+		hyphenate-limit-chars: 10 4 4;		
+		-webkit-hyphenate-limit-chars: 10 4 4;
+		-ms-hyphenate-limit-chars: 10 4 4;*/
+		
+		@include box-sizing;
+
+		&.cont-destaque {
+			border: none;
+			margin-top: 15px;
+
+			p {
+				font-size: 1.5rem;
+				line-height: 2.125rem;
+			}
+		}
+
+		&.cont-mini {
+			border: none;
+			margin-left: 0px;
+
+			p {
+				color: $cor-txt-claro;
+				font-size: 1rem;
+				line-height: 1.5rem;
+			}
+		}
+
+		ul {
+
+		}
+
+		p {
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		blockquote {
+			background: #fff;
+			margin-left: -56px;
+			padding: 55px 0 55px 56px;
+			margin-top: -20px;
+
+			p {
+				font-family: $font-titulo;
+				font-weight: $regular;
+				font-size: 1.75rem;
+				line-height: 2.25rem;
+			}
+
+			~ p {
+				padding-top: 15px;
+			}
+		}
+
+		&.margin-top {
+			margin-top: 80px;
+		}
+	}
+
+	.conteudo-post {
+		img {
+			width: 100%;
+		}
+
+		.conteudo {
+
+		}
+
+		.margin-top {
+			margin-top: 80px;
+		}
+
+		.margin-top-2x {
+			margin-top: 160px;	
+		}
+	}
+}
+
+.single-post {
+	.box-section {
+		.conteudo {
+			max-width: 100%;
+			display: table-cell;
+			vertical-align: top;
+
+			iframe {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.full-height {
+	.container {
+		height: 100vh;
+	}
+}
+
+.full-max-height {
+	.container {
+		height: 100vh;
+		max-height: 75vh;
+	}
+}
+
+.bg-imagem {
+	@include cover;
+}
+
+.parallax {
+	background-attachment: fixed;
+}
+
+.bg-mascara {
+	position: relative;
+	z-index: 0;
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 0;
+		background-color: rgba(#46495c, .5);
+	}
+
+	&.vermelho {
+		&:before {
+			background-color: rgba($cor1, .8);
+		}		
+	}
+
+	&.mask-single-servico {
+		&:before {
+			z-index: 1;
+		}
+
+		.container {
+			z-index: 2;
+		}
+	}
+}
+
+.box-vertical {
+	display: table;
+	height: 100%;
+	width: 100%;
+
+	.conteúdo-vertical {
+		display: table-cell;
+	}
+
+	&.vertical-center {
+		.conteúdo-vertical {
+			vertical-align: middle;
+		}
+	}
+
+	&.vertical-bottom {
+		.conteúdo-vertical {
+			vertical-align: bottom;
+		}
+	}
+}
