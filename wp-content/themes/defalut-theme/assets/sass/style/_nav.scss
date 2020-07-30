@@ -31,8 +31,8 @@
 			position: relative;
 		}
 
-		&:hover, &.ativo {
-			//color: $cor1;
+		&:hover, &.active {
+			color: $cor1;
 
 			i {
 				//color: $cor1;

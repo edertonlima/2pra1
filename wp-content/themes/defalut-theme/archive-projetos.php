@@ -15,7 +15,21 @@
 	<section class="box-section section-mobile-full">
 		<div class="container">
 
-			<h1>A melhor experiência<br>e retorno para o seu projeto</h1>
+			<h1>
+				<?php switch (ICL_LANGUAGE_CODE) {
+					case 'pt-br':
+						echo 'A melhor experiência<br>e retorno para o seu projeto.';
+					break;
+
+					case 'en':
+						echo 'The best experience<br> and return for your project.';
+					break;
+
+					case 'es':
+						echo 'La mejor experiencia<br> y retorno para su proyecto.';
+					break;
+				} ?>
+			</h1>
 			
 			<?php /*
 			<div class="row no-padding list-post projetos">
@@ -66,7 +80,20 @@
 
 					<div class="col-12 center">
 						<button class="load-more-projetos btn btn-mais extra transparente cinza-claro" var-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" var-taxonomy="categoria_projetos" var-category="" var-post-type="projetos" var-paged="2" var-max-paged="<?php echo $wp_query->max_num_pages; ?>" id="load-more">
-							mais
+							
+							<?php switch (ICL_LANGUAGE_CODE) {
+								case 'pt-br':
+									echo 'mais';
+								break;
+
+								case 'en':
+									echo 'more';
+								break;
+
+								case 'es':
+									echo 'más';
+								break;
+							} ?>
 						</button>
 					</div>
 

@@ -227,8 +227,9 @@ body * {
 
 .full-max-height {
 	.container {
-		height: 100vh;
-		max-height: 75vh;
+		min-height: 100vh;
+		padding-top: 100px;
+		padding-bottom: 100px;
 	}
 }
 

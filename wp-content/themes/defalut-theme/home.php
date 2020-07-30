@@ -17,7 +17,7 @@
 			<ul>
 				<li><a href="<?php echo get_home_url(); ?>" title="Home">Home</a></li>
 				<li><span>></span></li>
-				<li>Blog</li>
+				<li><?php the_field('titulo_menu',icl_object_id( 12, 'page', false, ICL_LANGUAGE_CODE )); ?></li>
 			</ul>
 
 		</div>
@@ -26,7 +26,7 @@
 	<section class="box-section section-mobile-full">
 		<div class="container">
 
-			<h1>A melhor experiência e retorno para o seu projeto</h1>
+			<h1><?php the_field('subtitulo',icl_object_id( 12, 'page', false, ICL_LANGUAGE_CODE )); ?></h1>
 
 			<?php /*
 			<ul class="list-category">

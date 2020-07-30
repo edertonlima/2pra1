@@ -1,16 +1,7 @@
 .slide-image-hover {
+	overflow: hidden;
 	width: 100%;
 	position: relative;
-
-
-	/*&:before {
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		z-index: 20;
-		background-color: rgba(#46495c, .5);
-	}*/
  
 	.img-bg {
 		display: block;

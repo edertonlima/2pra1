@@ -33,8 +33,8 @@
 
 								
 								
-								<a href="<?php echo $value['link-dinamico-slide']; ?>" class="btn-hover <?php if($key == 0){ echo 'ativo'; } ?>" id="btn-<?php echo $key; ?>" var-img="<?php echo $key; ?>">
-									<img src="<?php echo $value['image-dinamico-slide-bg']; ?>" alt="">
+								<a href="<?php echo $value['link-dinamico-slide']; ?>" class="btn-hover <?php if($key == 0){ echo 'ativo'; } ?>" id="btn-<?php echo $key; ?>" var-img="<?php echo $key; ?>" title="<?php echo $value['titulo-dinamico-slide']; ?>">
+									<img src="<?php echo $value['image-dinamico-slide-bg']; ?>" alt="<?php echo $value['titulo-dinamico-slide']; ?>">
 									<span class="txt" id="txt-<?php echo $key; ?>" style="<?php echo $background; ?>">
 										<?php echo $value['titulo-dinamico-slide']; ?>
 									</span>
@@ -48,7 +48,7 @@
 						<div class="selo-ico">
 							<?php foreach ($dinamico_slide as $key => $value) { ?>
 								<?php /*<img src="<?php echo get_template_directory_uri(); ?>/assets/images/selo00.png" alt="" id="" class="selo-bg">*/ ?>
-								<img src="<?php echo $value['selo-dinamico-slide']; ?>" class="selo <?php if($key == 0){ echo 'ativo'; } ?>" alt="" id="selo-<?php echo $key; ?>">
+								<img src="<?php echo $value['selo-dinamico-slide']; ?>" class="selo <?php if($key == 0){ echo 'ativo'; } ?>" alt="<?php echo $value['titulo-dinamico-slide']; ?>" id="selo-<?php echo $key; ?>">
 							<?php } ?>
 						</div>
 
@@ -85,7 +85,9 @@
 								<?php } ?>
 
 								<?php if(get_field('link-slide-home')){ ?>
-									<a href="<?php the_field('link-slide-home'); ?>" class="btn extra transparente"><?php the_field('titulo-link-slide-home'); ?></a>
+									<a href="<?php the_field('link-slide-home'); ?>" class="btn extra transparente" title="<?php the_field('titulo-link-slide-home'); ?>">
+										<?php the_field('titulo-link-slide-home'); ?>										
+									</a>
 								<?php } ?>
 							</div>
 
@@ -117,7 +119,9 @@
 								<?php } ?>
 
 								<?php if(get_field('link-slide-home')){ ?>
-									<a href="<?php the_field('link-slide-home'); ?>" class="btn extra transparente"><?php the_field('titulo-link-slide-home'); ?></a>
+									<a href="<?php the_field('link-slide-home'); ?>" class="btn extra transparente" title="<?php the_field('titulo-link-slide-home'); ?>">
+										<?php the_field('titulo-link-slide-home'); ?>
+									</a>
 								<?php } ?>
 							</div>
 
@@ -160,7 +164,21 @@
 		<section class="box-section section-mobile-full">
 			<div class="container">
 
-				<h1>Serviços</h1>
+				<h1>
+					<?php switch (ICL_LANGUAGE_CODE) {
+						case 'pt-br':
+							echo "Serviços";
+						break;
+
+						case 'en':
+							echo "Services";
+						break;
+
+						case 'es':
+							echo "Servicios";
+						break;
+					} ?>
+				</h1>
 				<div class="row list-post">
 
 					<?php while ( have_posts() ) : the_post();
@@ -185,12 +203,26 @@
 		);
 	query_posts( $query );
 
-	if( have_posts() ){ ?>
+	//if( have_posts() ){ ?>
 
 		<section class="box-section section-mobile-full">
 			<div class="container">
 						
-				<h1 class="margin-top">Projetos</h1>
+				<h1 class="margin-top">
+					<?php switch (ICL_LANGUAGE_CODE) {
+						case 'pt-br':
+							echo "Projetos";
+						break;
+
+						case 'en':
+							echo "Projects";
+						break;
+
+						case 'es':
+							echo "Proyectos";
+						break;
+					} ?>
+				</h1>
 				<div class="row no-padding list-post projetos">
 
 					<?php while ( have_posts() ) : the_post();
@@ -202,7 +234,22 @@
 					wp_reset_query(); ?>
 
 					<div class="col-12 center">
-						<a href="https://ederton.com.br/preview/2pra1/projetos" class="btn btn-mais extra transparente cinza-claro">ver todos</a>
+						<?php switch (ICL_LANGUAGE_CODE) {
+							case 'pt-br':
+								$title = 'ver todos';
+							break;
+
+							case 'en':
+								$title = 'see all';
+							break;
+
+							case 'es':
+								$title = 'ver todo';
+							break;
+						} ?>
+						<a href="<?php echo get_post_type_archive_link('projetos'); ?>" class="btn btn-mais extra transparente cinza-claro" title="<?php echo $title; ?>">
+							<?php echo $title; ?>
+						</a>
 					</div>
 
 				</div>
@@ -210,7 +257,7 @@
 			</div>
 		</section>
 
-	<?php } ?>
+	<?php// } ?>
 
 
 	<?php $banner_image = get_field('imagem-banner-inferior'); ?>

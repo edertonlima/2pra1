@@ -42,16 +42,33 @@
 			
 			<div class="row">
 				<div class="footer-col">
-					<h4>Contato</h4>
+					<h4>
+						<?php switch (ICL_LANGUAGE_CODE) {
+							case 'pt-br':
+								echo 'Contato';
+							break;
+
+							case 'en':
+								echo 'Contact';
+							break;
+
+							case 'es':
+								echo 'Contacto';
+							break;
+						} ?>
+					</h4>
 					<p>
-						<?php the_field('endereco',184); ?>
+						<?php 
+							$id_page_contato = icl_object_id( 184, 'page', false, ICL_LANGUAGE_CODE );
+							the_field('endereco',$id_page_contato); 
+						?>
 					</p>
 
-					<p><?php the_field('whatsapp',184); ?></p>
+					<p><?php the_field('whatsapp',$id_page_contato); ?></p>
 
 					<p>
-						<a href="mailto:<?php the_field('email',184); ?>" title="<?php the_field('email',184); ?>" target="_blank">
-							<?php the_field('email',184); ?>
+						<a href="mailto:<?php the_field('email',$id_page_contato); ?>" title="<?php the_field('email',$id_page_contato); ?>" target="_blank">
+							<?php the_field('email',$id_page_contato); ?>
 						</a>
 					</p>
 
@@ -71,39 +88,72 @@
 
 				</div>
 			
-				
-				<?php // NOTÍCIAS
-					$query = array(
-							'posts_per_page'	=> 3,
-							'post_type' 	 	=> 'post',
-							'category_name'  => 'blog'
-						);
-					query_posts( $query );
+				<div class="footer-col">
+					<h4>
+						<?php switch (ICL_LANGUAGE_CODE) {
+							case 'pt-br':
+								echo 'Últimos posts';
+							break;
 
-					if(have_posts()){ ?>
+							case 'en':
+								echo 'Latest posts';
+							break;
 
-						<div class="footer-col">
-							<h4>Últimos posts</h4>
+							case 'es':
+								echo 'Últimas publicaciones';
+							break;
+						} ?>
+					</h4>
 
+					<?php // NOTÍCIAS
+						$query = array(
+								'posts_per_page'	=> 3,
+								'post_type' 	 	=> 'post',
+								'category_name'  => 'blog'
+							);
+						query_posts( $query );
+
+						if(have_posts()){ ?>
+							
 							<?php while ( have_posts() ) : the_post(); ?>
 								<p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 									<?php the_title(); ?>
 								</a></p>
 							<?php endwhile; ?>
 
-						</div>
-
-					<?php } ?>
+						<?php }
+					?>
+				</div>
 
 				<div class="footer-col">
-					<h4>Newletter</h4>
-					<p>Inscreva-se em nossa newsletter e receba nosso conteúdo exclusivo</p>
+					<?php switch (ICL_LANGUAGE_CODE) {
+						case 'pt-br':
+							$title_imput = 'Seu e-mail';
+							$title_btn = 'receber'; ?>
+							<h4>Newletter</h4>
+							<p>Inscreva-se em nossa newsletter e receba nosso conteúdo exclusivo</p>
+						<?php break;
+
+						case 'en':
+							$title_imput = 'Your email';
+							$title_btn = 'receive'; ?>
+							<h4>Newletter</h4>
+							<p>Subscribe to our newsletter and receive our exclusive content</p>
+						<?php break;
+
+						case 'es':
+							$title_imput = 'Su e-mail';
+							$title_btn = 'recibir'; ?>
+							<h4>Newletter</h4>
+							<p>Suscríbase a nuestro boletín y reciba nuestro contenido exclusivo</p> 
+						<?php break;
+					} ?>
 
 					<form>
 						<fieldset>
-							<input type="text" name="email" placeholder="*Seu e-mail">
+							<input type="text" name="email" placeholder="*<?php echo $title_imput; ?>">
 						</fieldset>
-						<button class="btn mini transparente right">receber</button>
+						<button class="btn mini transparente right"><?php echo $title_btn; ?></button>
 					</form>
 				</div>
 			</div>
@@ -114,13 +164,13 @@
 	<section class="box-section no-padding" id="demonstracao">
 		<div class="container">
 
-			<h2 class="titulo-form">Agende uma demonstração</h2>
+			<h2 class="titulo-form"><?php echo get_the_title($id_page_contato); ?></h2> 
 			<form class="demonstracao">
 				
 				<div class="row">
 					<div class="scrollbar scrollbar-dynamic">
 					<div class="col-12">
-						<p>Preencha seus contatos no formuláro abaixo e um membro de nossa equipe irá entrar em contato.</p>
+						<p><?php echo get_post_field('post_content', $id_page_contato); ?></p>
 					</div>
 
 					<fieldset class="col-7 margin-top clear">
@@ -148,7 +198,21 @@
 					</fieldset>
 
 					<fieldset class="col-12">
-						<button class="btn mini transparente">enviar</button>
+						<button class="btn mini transparente">
+							<?php switch (ICL_LANGUAGE_CODE) {
+								case 'pt-br':
+									echo 'send';
+								break;
+
+								case 'en':
+									echo 'send';
+								break;
+
+								case 'es':
+									echo 'enviar'; 
+								break;
+							} ?>
+						</button>
 					</fieldset>
 					</div>
 				</div>

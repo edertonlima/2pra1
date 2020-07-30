@@ -7,7 +7,6 @@
  * @since Ederton 1.0
  */
 
-
 // REMOVE PARENT PAGE
 function remove_post_custom_fields() {
 	remove_meta_box( 'pageparentdiv' , 'page' , 'side' ); 
@@ -500,5 +499,13 @@ if($producao){
 		$rgb = array($r, $g, $b);
 
 		return $rgb; // returns an array with the rgb values
+	}
+
+
+
+	/* MENUS */
+	add_action( 'after_setup_theme', 'register_menu' );
+	function register_menu() {
+		register_nav_menu( 'primary', __( 'Menu', 'header' ) );
 	}
 ?>

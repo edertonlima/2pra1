@@ -85,7 +85,7 @@
 	</section>
 
 	
-	<?php if(is_page(184)){ ?>
+	<?php if(is_page(icl_object_id( 184, 'page', false, ICL_LANGUAGE_CODE ))){ ?>
 	<section class="box-section">
 		<div class="container">
 
@@ -134,32 +134,64 @@
 						<?php the_content(); ?>
 					</div>
 
+					<?php switch (ICL_LANGUAGE_CODE) {
+						case 'pt-br':
+							$nome = 'Seu nome';
+							$email = 'Seu e-mail';
+							$empresa = 'Empresa';
+							$telefone = 'Telefone';
+							$assunto = 'Assunto';
+							$mensagem = 'Mensagem';
+							$txtbtn = 'enviar';
+						break;
+
+						case 'en':
+							$nome = 'Your name';
+							$email = 'Your name email';
+							$empresa = 'Company';
+							$telefone = 'Telephone';
+							$assunto = 'Subject';
+							$mensagem = 'Message';
+							$txtbtn = 'send';
+						break;
+
+						case 'es':
+							$nome = 'Seu nome';
+							$email = 'Seu e-mail';
+							$empresa = 'Empresa';
+							$telefone = 'Teléfono';
+							$assunto = 'Tema';
+							$mensagem = 'Mensaje';
+							$txtbtn = 'enviar';
+						break;
+					} ?>
+
 					<fieldset class="col-10 margin-top clear">
-						<input type="text" name="" placeholder="*Seu nome">
+						<input type="text" name="" placeholder="*<?php echo $nome; ?>">
 					</fieldset>
 
 					<fieldset class="col-10 clear">
-						<input type="text" name="" placeholder="*Seu e-mail">
+						<input type="text" name="" placeholder="*<?php echo $email; ?>">
 					</fieldset>
 
 					<fieldset class="col-10 clear">
-						<input type="text" name="" placeholder="*Empresa">
+						<input type="text" name="" placeholder="*<?php echo $empresa; ?>">
 					</fieldset>
 
 					<fieldset class="col-10 clear">
-						<input type="text" name="" placeholder="*Telefone">
+						<input type="text" name="" placeholder="*<?php echo $telefone; ?>">
 					</fieldset>
 
 					<fieldset class="col-10 clear">
-						<input type="text" name="" placeholder="*Assunto">
+						<input type="text" name="" placeholder="*<?php echo $assunto; ?>">
 					</fieldset>
 
 					<fieldset class="col-10 clear">
-						<textarea name="" placeholder="*Mensagem"></textarea>
+						<textarea name="" placeholder="*<?php echo $mensagem; ?>"></textarea>
 					</fieldset>
 
 					<fieldset class="col-10 right">
-						<button class="btn mini transparente default">enviar</button>
+						<button class="btn mini transparente default"><?php echo $txtbtn; ?></button>
 					</fieldset>
 					
 				</div>
@@ -171,7 +203,7 @@
 	<?php } ?>
 
 
-	<?php if(is_page(10)){ ?>
+	<?php if(is_page(icl_object_id( 10, 'page', false, ICL_LANGUAGE_CODE ))){ ?>
 	<section class="box-section section-mobile-full">
 		<div class="container">
 
