@@ -233,7 +233,7 @@ add_action( 'wp_enqueue_scripts', 'meus_scripts', 100 );
 function meus_scripts() {
 	wp_enqueue_script(
 	    'load-more',
-	    get_template_directory_uri() . '/assets/js/load-more.js?ver=1.0', //esse é o arquivo .js do seu tema que vai conter todos os scripts (pode ser diferente no seu tema)
+	    get_template_directory_uri() . '/assets/js/load-more.js?ver=1.0', 
 	    array( 'jquery' ),
 	    null,
 	    false
